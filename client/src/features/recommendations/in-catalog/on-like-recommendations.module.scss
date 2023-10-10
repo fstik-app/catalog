@@ -1,0 +1,24 @@
+@use 'src/app/styles/theme.scss';
+
+.OnLikeRecommendations {
+  overflow: hidden;
+  transition: max-height 1.2s ease-in-out;
+}
+
+.BlockTitle {
+  display: block;
+  width: fit-content;
+  font-size: 1rem;
+  margin: 0.75rem auto;
+
+  color: theme.$hint_color;
+
+  height: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sticker {
+  max-width: 150px;
+}

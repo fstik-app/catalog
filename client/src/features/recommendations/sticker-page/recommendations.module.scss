@@ -1,0 +1,22 @@
+@use 'src/app/styles/theme.scss';
+
+.Title {
+  display: flex;
+  align-items: center;
+  color: theme.$hint_color;
+  font-size: 1rem;
+}
+
+.Title div {
+  width: 50%;
+  min-width: 50px;
+  border-bottom: 1px solid theme.$hint_color; 
+}
+
+.Title span {
+  min-width: 150px;
+  margin: auto;
+  display: block;
+  text-align: center;
+  padding: 0 10px;
+}

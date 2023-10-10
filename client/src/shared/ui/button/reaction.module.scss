@@ -1,0 +1,56 @@
+@use "sass:color";
+@use 'src/app/styles/theme.scss';
+
+
+.reaction_button {
+  user-select: none;
+  
+  margin-right: .5rem;
+  padding: 0.5em 1em;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.2rem;
+  
+  border-radius: 1rem;
+  background-color: var(--tg-theme-hint-button-hsl-color);
+  transition: all 0.2s ease-in-out;
+  color: theme.$text_color;
+
+  user-select: none;
+  cursor: pointer;
+
+  img {
+    display: inline;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.25rem;
+
+    vertical-align: middle;
+  }
+
+  &.enabled {
+    color: theme.$button_text_color;
+    background-color: theme.$button_color;
+  }
+
+  &:active {
+    filter: opacity(0.5)
+  }
+}
+
+.Likes {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+
+  width: 100%;
+  padding-top: 0.25rem;
+  padding-bottom: .25rem;
+
+  transition-duration: 50ms;
+}
+
+.bg_red {
+  background-color: rgba(188, 0, 0, 0.88) !important;
+}

@@ -1,0 +1,7 @@
+@use 'src/app/styles/theme.scss';
+
+.Page {
+  margin: auto;
+  max-width: theme.$appMaxWidth;
+  min-height: 100vh;
+}

@@ -1,0 +1,51 @@
+{
+  "add": "AJOUTER",
+  "share": "PARTAGER",
+  "copied": "COPIÉ !",
+  "catalog": "Catalogue",
+  "description": "Description",
+  "hello": "Bonjour",
+  "like": "J'aime",
+  "search-placeholder": "Rechercher des autocollants",
+  "tag": "étiquette",
+  "recommendations": "recommandations",
+  "relatedStickerSets": "Ensembles d'autocollants associés",
+  "trends": "tendances",
+  "auth-error": "Le serveur est indisponible, veuillez réessayer plus tard",
+  "menu": {
+    "main": "principal",
+    "new": "nouveau",
+    "popular": "populaire",
+    "trending": "tendances",
+    "verified": "recommandations"
+  },
+  "main-description": "😻 Vous pouvez trouver de nouveaux packs d'autocollants dans notre catalogue",
+  "STICKERS": "AUTOCOLLANTS",
+  "meta": {
+    "description": "@fstikbot catalogue d'autocollants Telegram",
+    "title": "Catalogue de stickers préférés"
+  },
+  "error": {
+    "notfound": "Page non trouvée"
+  },
+  "carousell": {
+    "button": "Ouvrir"
+  },
+  "mainPage": "Page principale",
+  "mainTab": {
+    "title": "Packs d'autocollants pour vous",
+    "animated": "Autocollants animés",
+    "new": "Nouveaux ensembles d'autocollants",
+    "popular": "Populaires",
+    "trends": "Tendances",
+    "cats": "Autocollants de chats",
+    "anime": "Anime"
+  },
+  "reward": {
+    "message": {
+      "title": "Vous avez reçu une récompense !",
+      "description": "Pour récupérer votre récompense, cliquez sur le bouton ci-dessous",
+      "button": "Récupérer"
+    }
+  }
+}

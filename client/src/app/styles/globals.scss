@@ -1,0 +1,6 @@
+@use 'src/app/styles/theme.scss';
+
+
+.hintText {
+  color: theme.$hint_color;
+}

@@ -1,0 +1,41 @@
+:root {
+  --app-max-width: 1280px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tg-theme-bg-color: #181819;
+    --tg-theme-button-color: #50a8eb;
+    --tg-theme-button-text-color: #fffffe;
+    --tg-theme-hint-color: #7d7d7d;
+    --tg-theme-link-color: #57a7e0;
+    --tg-theme-secondary-bg-color: #000001;
+    --tg-theme-text-color: #fffffe;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --tg-theme-bg-color: #e0e0e0;
+    --tg-theme-text-color: #000001;
+    --tg-theme-hint-color: #99999a;
+    --tg-theme-link-color: #2481cc;
+    --tg-theme-button-color: #2481cc;
+    --tg-theme-button-text-color: #fffffe;
+    --tg-theme-secondary-bg-color: #fffffe;
+  }
+}
+
+$isDarkMode: 'dark';
+$scheme: var(--tg-theme-scheme);
+$appMaxWidth: var(--app-max-width);
+
+$bg_color: var(--tg-theme-bg-color);
+$bg_color_10: var(--tg-theme-bg-color-10);
+$text_color: var(--tg-theme-text-color);
+$hint_color: var(--tg-theme-hint-color);
+$hint_color_20: var(--tg-theme-hint-color-20);
+$link_color: var(--tg-theme-link-color);
+$button_color: var(--tg-theme-button-color);
+$button_text_color: var(--tg-theme-button-text-color);
+$secondary_bg_color: var(--tg-theme-secondary-bg-color);

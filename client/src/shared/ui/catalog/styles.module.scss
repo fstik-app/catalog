@@ -1,0 +1,30 @@
+@use 'src/app/styles/theme.scss';
+
+
+.Catalog {
+  display: flex;
+
+  min-height: calc(100vh - 60px);
+
+
+  margin-top: 60px;
+
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+  & > div:last-child {
+    border: none;
+  }
+}
+
+.CatalogItem {
+  width: 100%;
+
+  border-bottom: 1px solid theme.$hint_color_20;
+
+  overflow: hidden;
+}

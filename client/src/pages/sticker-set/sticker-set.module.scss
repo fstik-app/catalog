@@ -1,0 +1,31 @@
+@use "sass:color";
+@use 'src/app/styles/theme.scss';
+
+.StickerSet {
+  padding: 0 0.5rem;
+}
+
+.description {
+  font-size: 1rem;
+  color: theme.$hint_color;
+  margin-bottom: 8px;
+
+  height: 1.5rem;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  & > .tagsVisible {
+    height: fit-content;
+    white-space: normal !important;
+  }
+}
+
+.backwards {
+  width: 24px;
+  height: 24px;
+
+  fill: theme.$hint_color;
+}

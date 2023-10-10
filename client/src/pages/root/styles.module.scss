@@ -1,0 +1,14 @@
+@use 'src/app/styles/theme.scss';
+@use 'src/app/styles/globals.scss';
+
+.HelloMessage {
+  display: flex;
+  height: 80%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  text-overflow: ellipsis;
+
+  // .header {}
+}

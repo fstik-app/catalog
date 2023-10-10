@@ -1,0 +1,82 @@
+@use 'src/app/styles/theme.scss';
+
+.SearchWrapper {
+  position: fixed;
+  top: 0;
+  z-index: 1001;
+  width: 100%;
+}
+
+.Search {
+  display: flex;
+  padding: 0.5rem;
+
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--app-max-width);
+
+  background-color: theme.$bg_color;
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+  }
+}
+
+.border {
+  border: 1px solid theme.$hint_color;
+}
+
+.searchInput {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 44px;
+
+  background-color: theme.$secondary_bg_color;
+
+  border-radius: 1rem;
+
+  font-size: 1rem;
+  
+  .label {
+    height: inherit;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 75%;
+  }
+
+  input {
+    all: unset;
+    width: 100%;
+    height: inherit;
+
+    text-align: left;
+  }
+
+  svg {
+    margin-left: 12px;
+    margin-right: 12px;
+
+    height: inherit;
+    width: 1.2rem;
+
+    fill: theme.$hint_color;
+  }
+}
+
+.cirleWrapper {
+  all: unset;
+
+  height: inherit;
+
+  cursor: pointer;
+}
+

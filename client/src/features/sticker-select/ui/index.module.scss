@@ -1,0 +1,29 @@
+@use 'src/app/styles/theme.scss';
+
+
+.StickerExpandedWrapper {
+  width: 100vw;
+  height: 100vh;
+
+  margin: auto;
+  // padding: 1rem;
+
+  top: 0;
+  left: 0;
+  position: fixed;
+
+  z-index: 10000;
+
+  background-color: theme.$secondary_bg_color;
+  opacity: 0.85;
+}
+
+.StickerExpanded {
+  z-index: 100000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  width: fit-content;
+}

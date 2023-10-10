@@ -1,0 +1,25 @@
+@use 'src/app/styles/theme.scss';
+
+.StickyButtonWrapper {
+  width: 100%;
+  max-width: calc(theme.$appMaxWidth * 0.5);
+
+  margin: 2rem auto 2rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  position: sticky;
+  bottom: 2rem;
+
+  user-select: none;
+  cursor: pointer;
+
+  & > div {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+  }
+}

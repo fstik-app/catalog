@@ -1,0 +1,19 @@
+@use 'src/app/styles/theme.scss';
+
+.Link {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+
+  padding: 0 1rem;
+  line-height: 3rem;
+
+  color: theme.$link_color;
+
+  &.round {
+    border-radius: 3rem;
+
+    color: theme.$button_text_color;
+    background-color: theme.$button_color;
+  }
+}

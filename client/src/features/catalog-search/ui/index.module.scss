@@ -1,0 +1,7 @@
+@use 'src/app/styles/theme.scss';
+
+.SearchWrapper {
+  position: fixed;
+  z-index: 1001;
+  width: 100%;
+}

@@ -1,0 +1,70 @@
+@use 'src/app/styles/theme.scss';
+
+.Menu::-webkit-scrollbar {
+  display: none !important;
+}
+
+.Menu {
+  top: 0px;
+  z-index: 1000;
+  position: fixed;
+
+  width: 100%;
+  max-width: var(--app-max-width);
+  transition: top 0.3s;
+
+  font-size: smaller;
+  font-weight: 500;
+  line-height: 0.8rem;
+
+  overflow-x: scroll;
+
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+
+  color: theme.$hint_color;
+
+  &.isOpen {
+    top: 58px;
+  }
+
+  .buttonsWrapper {
+    border-top: 2px solid theme.$bg_color;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    width: fit-content;
+    min-width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    height: 2.5rem;
+
+    background-color: theme.$bg_color;
+  }
+
+  .MenuButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 0.3rem 1rem;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    user-select: none;
+    cursor: default;
+
+    &.active {
+      color: theme.$button_color;
+    }
+  }
+}
+
+.Main::-webkit-scrollbar {
+  display: none !important;
+}

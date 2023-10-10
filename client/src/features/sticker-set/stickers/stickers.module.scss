@@ -1,0 +1,65 @@
+@use "sass:color";
+@use 'src/app/styles/theme.scss';
+
+.Main {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  &.showFull {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow: hidden;
+  }
+
+  &:first-child {
+    display: flex;
+    flex-direction: row;
+  }
+
+  overflow: hidden;
+  overflow-y: hidden !important;
+  // overscroll-behavior: none none;  
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.android {
+    overflow: scroll;
+  }
+
+  .sticker {
+    width: fit-content;
+    padding: 1rem .5rem;
+
+    border-radius: .5rem;
+    background-size: 500% 500%;
+
+    & div {
+      border-radius: .5rem;
+
+      background: linear-gradient(
+        45deg,
+        var(--tg-theme-hint-button-hsl-color) 20%,
+        theme.$hint_color_20 40%,
+        var(--tg-theme-hint-button-hsl-color) 60%,
+      );
+
+      &.backgroundNone {
+        background: none;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}

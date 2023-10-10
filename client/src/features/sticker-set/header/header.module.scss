@@ -1,0 +1,140 @@
+@use "sass:color";
+@use 'src/app/styles/theme.scss';
+
+
+.Head {
+  width: 100%;
+  min-height: 25px;
+  padding-top: 0.5rem;
+  // padding-bottom: 0.5rem;
+
+  display: flex;
+  justify-content: space-between;
+
+  // line-height: 1.6875rem;
+}
+
+.ButtonsContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  .name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: theme.$text_color;
+
+    border-bottom: 2px dotted theme.$hint_color_20;
+
+    overflow: visible;
+    white-space: nowrap;
+  }
+
+  .description {
+    font-size: 1rem;
+    color: theme.$hint_color;
+    margin-bottom: 8px;
+
+    height: 1.5rem;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    & > .tagsVisible {
+      height: fit-content;
+      white-space: normal !important;
+    }
+  }
+
+  .tagsVisible {
+    height: fit-content;
+    white-space: normal !important;
+  }
+}
+
+.roundd {
+    &>* {
+      display: block;
+
+      width: 4rem;
+      height: 4rem;
+  
+      border-radius: 50%;
+      background-color: theme.$button_color;
+      text-align: center;
+      line-height: 4rem;
+
+      font-weight: 600;
+      font-size: 0.75rem;
+
+
+      background-color: theme.$button_color;
+
+      transition: all 0.2s ease-in-out;
+
+      color: theme.$text_color;
+
+      user-select: none;
+      color: theme.$button_text_color;
+      -webkit-tap-highlight-color: rgba(66, 193, 31, 0);
+  
+      &:active, &:visited {
+        color: theme.$button_text_color;  
+      }
+    }
+}
+
+.Tag {
+  display: inline-block;
+  
+  border-radius: 5px;
+  margin-right: 0.2rem;
+  line-height: 1rem;
+  padding: 2px;
+
+  // color: theme.$button_text_color;
+}
+
+.rounded {
+  border-radius: 10rem;
+  padding: 0;
+
+  font-weight: 600;
+  font-size: 0.75rem;
+
+  background-color: theme.$button_color;
+
+  transition: all 0.2s ease-in-out;
+
+  color: theme.$text_color;
+
+  &>span {
+    line-height: 100%;
+    display: block;
+    margin: 1rem 1.25rem;
+  }
+
+  &.add {
+    user-select: none;
+    color: theme.$button_text_color;
+    -webkit-tap-highlight-color: rgba(66, 193, 31, 0);
+
+    &:active {
+      transition-duration: all 0.3s ease-in;
+
+      background-color: theme.$bg_color;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

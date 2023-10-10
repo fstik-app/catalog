@@ -1,0 +1,51 @@
+{
+  "add": "ADD",
+  "share": "SHARE",
+  "copied": "COPIED!",
+  "catalog": "Catalog",
+  "description": "Description",
+  "hello": "Hello",
+  "like": "Like",
+  "search-placeholder": "Search for stickers",
+  "tag": "tag",
+  "recommendations": "recommendations",
+  "relatedStickerSets": "Related sticker sets",
+  "trends": "trends",
+  "auth-error": "Server is unavailable, try again later",
+  "menu": {
+    "main": "main",
+    "new": "new",
+    "popular": "popular",
+    "trending": "trends",
+    "verified": "recommendations"
+  },
+  "main-description": "😻 You can find new sticker packs in our catalog",
+  "STICKERS": "STICKERS",
+  "meta": {
+    "description": "@fstikbot telegram stickers catalog",
+    "title": "Favorite Stickers Catalog"
+  },
+  "error": {
+    "notfound": "Page not found"
+  },
+  "carousell": {
+    "button": "Open"
+  },
+  "mainPage": "Main page",
+  "mainTab": {
+    "title": "Stickerpacks for you",
+    "animated": "Animated",
+    "new": "New stickersets",
+    "popular": "Popular",
+    "trends": "Trends",
+    "cats": "Cats stickers",
+    "anime": "Anime"
+  },
+  "reward": {
+    "message": {
+      "title": "You have received a reward!",
+      "description": "To pick up your reward, click on the button below",
+      "button": "Pick up"
+    }
+  }
+}

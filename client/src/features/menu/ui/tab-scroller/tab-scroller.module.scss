@@ -1,0 +1,21 @@
+@use 'src/app/styles/theme.scss';
+
+
+.TabsScroller {
+  z-index: 10000;
+  display: inline-block;
+  position: absolute;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  
+  width: 33%;
+  height: 3px;
+  bottom: 0px;
+
+  transition: 500ms;
+  
+  border-radius: 5px 5px 0px 0px;
+  
+  background-color: theme.$button_color;
+}

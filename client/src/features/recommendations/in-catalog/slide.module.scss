@@ -1,0 +1,63 @@
+@use 'src/app/styles/theme.scss';
+
+.CarousellSlide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  height: 150px;
+
+  border-radius: 0.5rem;
+  background-color: theme.$hint_color_20;
+  
+  text-align: center;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+
+  .title {
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+
+    height: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+
+  .image {
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    max-width: 120px;
+    max-height: 120px;
+  }
+
+  .price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    font-size: 1rem;
+
+    line-height: 0.5rem;
+
+    height: 2rem;
+  }
+
+  .button {
+    background-color: theme.$button_color;
+    padding: 1rem;
+    border-radius: 1rem;
+    line-height: 0rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
