@@ -1,5 +1,3 @@
-![banner](https://telegra.ph/file/5ea3c6d599fb69600ae10.jpg)
-
 ## Telegram Mini App Sticker Catalog
 
 ![GitHub license](https://img.shields.io/github/license/fstik-app/catalog.svg)
@@ -7,6 +5,8 @@
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white) ![MongoDB Atlas](https://img.shields.io/badge/MongoDB-Atlas-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
 [Sticker Catalog](https://t.me/fStikBot/catalog) | [NSFW Stickers Checker](https://github.com/LyoSU/fstik-nsfw) | [Bot Source Code](https://github.com/LyoSU/fStikBot)
+
+<img src="https://telegra.ph/file/5ea3c6d599fb69600ae10.jpg" alt="banner" width="300"/>
 
 ## Description
 This is the Telegram Mini App Sticker Catalog.
