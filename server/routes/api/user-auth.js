@@ -97,8 +97,17 @@ module.exports = async (ctx) => {
   )
 
   const userDB = await ctx.state.db.User.findOne({
-    telegram_id: userData.id,
+    telegram_id: userData?.id,
   })
+
+  if (!userDB && userData?.id) {
+    await ctx.state.db.User.create({
+      telegram_id: userData?.id,
+      first_name: userData?.first_name,
+      last_name: userData?.last_name,
+      username: userData?.username,
+    })
+  }
 
   ctx.result = {
     user_token: userToken,

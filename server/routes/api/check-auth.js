@@ -47,14 +47,14 @@ module.exports = async (ctx, next) => {
 
   const user = await ctx.state.db.AppUser.findOne({
     provider: 'telegram',
-    uid: telegramUser.telegram_id,
+    uid: telegramUser?.telegram_id,
   })
 
   if (!user) {
     const newUser = await ctx.state.db.AppUser.create({
-      _id: telegramUser._id,
+      _id: telegramUser?._id,
       provider: 'telegram',
-      uid: telegramUser.telegram_id,
+      uid: telegramUser?.telegram_id,
     })
 
     ctx.state.user = newUser
