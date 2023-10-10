@@ -7,7 +7,7 @@ import { routes } from '@/app/router';
 export const Privacy = () => {
   return (
     <>
-      <BackButton onClick={() => window.history.length > 0 ? window.history.back() : routes.root.open()} />
+      <BackButton onClick={routes.root.open} />
 
       <section className="policy" style={{ padding: '0 2rem' }}>
         <div

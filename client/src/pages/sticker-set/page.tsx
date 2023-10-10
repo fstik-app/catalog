@@ -39,7 +39,7 @@ export const StickerSetPage: FC = () => {
 
   return (
     <div>
-      <BackButton onClick={() => window.history.length > 0 ? window.history.back() : routes.root.open()} />
+      <BackButton onClick={routes.root.open} />
       <SelectedSticker/>
 
       <div className={styles.StickerSet}>

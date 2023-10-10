@@ -1,5 +1,6 @@
 import { sample } from 'effector';
 import WebApp from '@twa-dev/sdk';
+import { redirect } from 'atomic-router';
 
 import { routes } from '@/app/router';
 import { getStickerSetByName } from '@/entities/sticker-set/api';
@@ -10,13 +11,15 @@ import { recommendationsReseted } from '@/shared/recommendations';
 
 export const currentRoute = routes.stickerSet;
 
-sample({
-  source: appStarted,
-  filter: () => Boolean(WebApp.initDataUnsafe.start_param),
-  fn: () => ({
+redirect({
+  clock: sample({
+    clock: appStarted,
+    filter: () => Boolean(WebApp.initDataUnsafe.start_param),
+  }),
+  params: () => ({
     stickerSetName: WebApp.initDataUnsafe.start_param?.replace('set=', '') || '',
   }),
-  target: [currentRoute.$params, currentRoute.open],
+  route: currentRoute,
 });
 
 sample({
