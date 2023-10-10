@@ -56,7 +56,7 @@ export const FirstSticker = ({
 
     return (<>
       <ImageMedia
-        src={import.meta.env.VITE_FILE_URL + src + '/sticker.webp'}
+        src={import.meta.env.VITE_API_URL + '/file/' + src + '/sticker.webp'}
         size={STICKER_SIZE}
         forcedLoading={true}
         computedWidth={width || sticker.width}
@@ -71,7 +71,7 @@ export const FirstSticker = ({
 
     return (<>
       <ImageMedia
-        src={import.meta.env.VITE_FILE_URL + src + '/sticker.webp'}
+        src={import.meta.env.VITE_API_URL + '/file/' + src + '/sticker.webp'}
         size={STICKER_SIZE}
         forcedLoading={true}
         computedWidth={width || sticker.width}
@@ -82,8 +82,8 @@ export const FirstSticker = ({
   }
 
   // if (type === StickerSetEnum.VIDEO) {
-  //   const src = import.meta.env.VITE_FILE_URL + sticker.file_id + '/sticker.mp4';
-  //   const scrThumb = import.meta.env.VITE_FILE_URL + (sticker.thumb?.file_id || '') + '/sticker.webp';
+  //   const src = import.meta.env.VITE_API_URL + '/file/' + sticker.file_id + '/sticker.mp4';
+  //   const scrThumb = import.meta.env.VITE_API_URL + '/file/' + (sticker.thumb?.file_id || '') + '/sticker.webp';
 
   //   return (<>
   //     <Video
@@ -99,7 +99,7 @@ export const FirstSticker = ({
   // }
 
   if (type === StickerSetEnum.ANIMATED) {
-    const src = import.meta.env.VITE_FILE_URL + sticker.file_id + '/sticker.webp';
+    const src = import.meta.env.VITE_API_URL + '/file/' + sticker.file_id + '/sticker.webp';
 
     return (<>
       <AnimatedSticker

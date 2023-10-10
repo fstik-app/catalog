@@ -82,8 +82,8 @@ export const Stickers = ({ type, stickers, packIndex, isAndroid, onClick = () =>
 
   const stickersR = useMemo(() => stickers.map(({ thumb, file_id, height, width }: ISticker, i: number) => {
     const forcedLoading = (packIndex < 4) && (i < 6);
-    const src = import.meta.env.VITE_FILE_URL + file_id + '/sticker.webp';
-    const thumb_src = import.meta.env.VITE_FILE_URL + (thumb?.file_id || '') + '/sticker.webp';
+    const src = import.meta.env.VITE_API_URL + '/file/' + file_id + '/sticker.webp';
+    const thumb_src = import.meta.env.VITE_API_URL + '/file/' + (thumb?.file_id || '') + '/sticker.webp';
     const computedWidth = Math.round(STICKER_HEIGHT * width / height);
 
     const computedHeight = computedWidth > STICKER_MAX_WIDTH

@@ -19,7 +19,7 @@ export const SelectedSticker = () => {
       {
         sticker.animated
           ? <AnimatedSticker
-            tgsUrl={import.meta.env.VITE_FILE_URL + (sticker.file_id || '') + '/sticker.webp'}
+            tgsUrl={import.meta.env.VITE_API_URL + '/file/' + (sticker.file_id || '') + '/sticker.webp'}
             size={240}
             play={true}
             forceOnHeavyAnimation={false}
@@ -33,7 +33,7 @@ export const SelectedSticker = () => {
           />
           : <ImageMedia
             size={240}
-            src={import.meta.env.VITE_FILE_URL + (sticker.file_id || sticker.thumb?.file_id || '') + '/sticker.webp'}
+            src={import.meta.env.VITE_API_URL + '/file/' + (sticker.file_id || sticker.thumb?.file_id || '') + '/sticker.webp'}
             forcedLoading={false}
             computedWidth={240}
             computedHeight={240}
