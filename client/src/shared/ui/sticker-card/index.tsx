@@ -6,6 +6,7 @@ import { ImageMedia, AnimatedSticker } from '@/entities/sticker';
 import RLottie from '@/shared/lib/rlottie/RLottie';
 import { useIntersectionObserver } from '@/shared/lib/telegram-web';
 import { IStickerSet, StickerSetEnum } from '@/types';
+import { routes } from '@/app/router';
 
 
 const STICKER_SIZE = 150;
@@ -17,7 +18,7 @@ export const StickerCard = ({
 }) => {
   return (<div className={styles.StickerCard}>
     <FirstSticker stickerSet={stickerSet}/>
-    <Link to={`stickerset/${stickerSet.name}`}>
+    <Link to={routes.stickerSet} params={{ stickerSetName: stickerSet.name }}>
       {stickerSet.title}
     </Link>
   </div>);

@@ -50,7 +50,7 @@ export const Header = ({
   return (
     <div className={styles.Head}>
       <div className={styles.label}>
-        <Link to={`/stickerSet/${name}`} className={styles.name}>
+        <Link to={routes.stickerSet} params={{ stickerSetName: name }} className={styles.name}>
           {title}
         </Link>
         <Tags
