@@ -4,8 +4,6 @@
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white) ![MongoDB Atlas](https://img.shields.io/badge/MongoDB-Atlas-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
-[Sticker Catalog](https://t.me/fStikBot/catalog) | [NSFW Stickers Checker](https://github.com/LyoSU/fstik-nsfw) | [Bot Source Code](https://github.com/LyoSU/fStikBot)
-
 <img src="https://telegra.ph/file/5ea3c6d599fb69600ae10.jpg" alt="banner" width="300"/>
 
 ## Description
@@ -13,6 +11,18 @@ This is the Telegram Mini App Sticker Catalog.
 
 Huge catalog of sticker packs for Telegram for every taste in one application. A large and convenient set of various and unique stickers for their quick and easy search and installation.
 
+- Live demo: [Sticker Catalog](https://t.me/fStikBot/catalog)
+- Bot source code: [fStikBot](https://github.com/LyoSU/fStikBot)
+
+## Features
+
+- [x] Search for stickers by name, description, tags
+- [x] Automatic catalog replenishment, new stickers every day
+- [x] Recommendations based on current trends
+- [x] A rating system to promote or downgrade a sticker pack in the overall ranking
+- [x] Ability to add your own stickers to the general catalog
+- [x] Animated stickers support
+- [x] Displaying similar sticker packs based on likes and open sticker packs
 
 ## Client setup
 
