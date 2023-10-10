@@ -4,7 +4,7 @@
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white) ![MongoDB Atlas](https://img.shields.io/badge/MongoDB-Atlas-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
-<img src="https://telegra.ph/file/5ea3c6d599fb69600ae10.jpg" alt="banner" width="300"/>
+<img src="https://telegra.ph/file/6885d40765c06f03981ba.png" alt="banner" width="300"/>
 
 ## Description
 This is the Telegram Mini App Sticker Catalog.
@@ -22,6 +22,10 @@ Huge catalog of sticker packs for Telegram for every taste in one application. A
 - **Rating system**: Help us promote the best sticker packs by rating them and contributing to the overall ranking
 - **Support for animated stickers**: Bring your conversations to life with our support for animated stickers
 - **Display of similar sticker packs**: Discover new sticker packs that you’ll love based on your likes and open sticker packs
+
+## Screenshots
+
+<img src="https://telegra.ph/file/98a5b93113e8caebb4402.png" alt="banner" width="200"/> <img src="https://telegra.ph/file/bdb01f29b04c36717c711.png" alt="banner" width="200"/> <img src="https://telegra.ph/file/a233facf405728d2892b6.png" alt="banner" width="200"/> <img src="https://telegra.ph/file/6dcc941b715d6135ae475.png" alt="banner" width="200"/> 
 
 ## Client setup
 
