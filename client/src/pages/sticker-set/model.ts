@@ -14,7 +14,7 @@ sample({
   source: appStarted,
   filter: () => Boolean(WebApp.initDataUnsafe.start_param),
   fn: () => ({
-    stickerSetName: WebApp.initDataUnsafe.start_param || '',
+    stickerSetName: WebApp.initDataUnsafe.start_param?.replace('set=', '') || '',
   }),
   target: [currentRoute.$params, currentRoute.open],
 });
