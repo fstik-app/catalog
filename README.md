@@ -1,8 +1,6 @@
 ## Telegram Mini App Sticker Catalog
 
-![GitHub license](https://img.shields.io/github/license/fstik-app/catalog.svg)
-
-![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white) ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white) ![MongoDB Atlas](https://img.shields.io/badge/MongoDB-Atlas-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) ![Effector](https://img.shields.io/badge/Effector-FFC0CB?style=for-the-badge&logo=effector&logoColor=white)
+ ![Apache License 2.0](https://img.shields.io/badge/License-Apache%202.0-FFC0CB?style=for-the-badge&logo=apache&logoColor=white) ![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white) ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white) ![MongoDB Atlas](https://img.shields.io/badge/MongoDB-Atlas-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) ![Effector](https://img.shields.io/badge/Effector-FFC0CB?style=for-the-badge&logo=effector&logoColor=white)
 
 <img src="https://telegra.ph/file/6885d40765c06f03981ba.png" alt="banner" width="300"/>
 
@@ -60,10 +58,6 @@ The dev-server will start listening on port `5173` by default.
 To build the project, run:
 
 ```npm run build```
-
-## Client Documentation
-
-Link to the Client documentation: [CLIENT_DOCS.md](CLIENT_DOCS.md)
 
 ## Server setup
 
