@@ -22,7 +22,6 @@ Huge catalog of sticker packs for Telegram for every taste in one application. A
   * Visit [this page](https://core.telegram.org/bots/features#botfather) for more information
 * Once you have all of that, you can clone the repository
   * You can do that by running ```git clone https://github.com/fstik-app/catalog``` in your terminal or by downloading the repository as a zip archive
-* Finally, you'll need to set the environment variables. You can do that by creating a ```.env``` file in the root directory of the project and setting the variables there
   * You can also set them in your shell or in your hosting provider's dashboard
 
 ### MongoDB Atlas Setup
@@ -51,7 +50,13 @@ We provide a sample date for the minimum functionality of the catalog to work. Y
 
 Follow the instructions [here](https://www.mongodb.com/docs/atlas/import/mongoimport/) to import the data into your cluster.
 
-### Environment Variables
+### Installing
+
+Go to the server directory:
+
+```cd server```
+
+Set the following environment variables in a .env file or in your shell:
 
 | Variable | Description |
 | -------- | ----------- |
@@ -62,12 +67,6 @@ Follow the instructions [here](https://www.mongodb.com/docs/atlas/import/mongoim
 | ATLAS_MONGODB_URI | The MongoDB Atlas connection URI. |
 | SESSION_SECRET | The session secret. |
 | REDIS_PREFIX | The Redis key prefix. |
-
-### Installing
-
-Go to the server directory:
-
-```cd server```
 
 To install the dependencies, run:
 
