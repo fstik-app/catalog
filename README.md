@@ -1,10 +1,10 @@
 ## Telegram Mini App Sticker Catalog
 
-![GitHub license](https://img.shields.io/github/license/LyoSU/fstikbot-api.js.svg)
+![GitHub license](https://img.shields.io/github/license/fstik-app/catalog.svg)
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white) ![MongoDB Atlas](https://img.shields.io/badge/MongoDB-Atlas-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
-[Sticker Catalog](https://t.me/fStikBot/catalog) | [NSFW Stickers Checker](https://github.com/LyoSU/fstik-nsfw) | [Bot Source Code](https://github.com/LyoSU/fStikBot) | [Frontend Source Code](https://github.com/LyoSU/fStikBot)
+[Sticker Catalog](https://t.me/fStikBot/catalog) | [NSFW Stickers Checker](https://github.com/LyoSU/fstik-nsfw) | [Bot Source Code](https://github.com/LyoSU/fStikBot)
 
 ## Description
 This is the Telegram Mini App Sticker Catalog.
@@ -21,7 +21,7 @@ Huge catalog of sticker packs for Telegram for every taste in one application. A
 * You'll also need a Telegram bot token. You can get one by talking to [BotFather](https://t.me/BotFather)
   * Visit [this page](https://core.telegram.org/bots/features#botfather) for more information
 * Once you have all of that, you can clone the repository
-  * You can do that by running ```git clone https://github.com/LyoSU/fstikbot-api``` in your terminal or by downloading the repository as a zip archive
+  * You can do that by running ```git clone https://github.com/fstik-app/catalog``` in your terminal or by downloading the repository as a zip archive
 * Finally, you'll need to set the environment variables. You can do that by creating a ```.env``` file in the root directory of the project and setting the variables there
   * You can also set them in your shell or in your hosting provider's dashboard
 
