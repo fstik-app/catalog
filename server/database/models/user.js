@@ -1,0 +1,60 @@
+const mongoose = require('mongoose')
+
+const userSchema = mongoose.Schema({
+  telegram_id: {
+    type: Number,
+    index: true,
+    unique: true,
+  },
+  first_name: {
+    type: String,
+    required: true,
+  },
+  last_name: String,
+  username: String,
+  stickerSet: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'StickerSet',
+  },
+  videoStickerSet: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'StickerSet',
+  },
+  inlineStickerSet: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'StickerSet',
+  },
+  animatedStickerSet: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'StickerSet',
+  },
+  autoEmoji: {
+    type: Boolean,
+    default: false,
+  },
+  inlineType: {
+    type: String,
+  },
+  premium: {
+    type: Boolean,
+    default: false,
+  },
+  payments: Array,
+  locale: String,
+  blocked: {
+    type: Boolean,
+    default: false,
+  },
+  moderator: {
+    type: Boolean,
+    default: false,
+  },
+  publicBan: {
+    type: Boolean,
+    default: false,
+  },
+}, {
+  timestamps: true,
+})
+
+module.exports = userSchema

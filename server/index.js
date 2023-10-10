@@ -1,0 +1,5 @@
+require('dotenv').config({ path: './.env' })
+require('./server')
+require('./utils/parser')
+require('./utils/sync')
+require('./helpers/aliexpress')

@@ -1,0 +1,21 @@
+{
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "extends": "standard",
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "rules": {
+        "comma-dangle": [1, "always-multiline"],
+        "no-unused-vars": 1,
+        "camelcase": 1,
+        "no-trailing-spaces": 1
+    }
+}
