@@ -1,3 +1,5 @@
+![banner](https://telegra.ph/file/5ea3c6d599fb69600ae10.jpg)
+
 ## Telegram Mini App Sticker Catalog
 
 ![GitHub license](https://img.shields.io/github/license/fstik-app/catalog.svg)
