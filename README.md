@@ -16,13 +16,12 @@ Huge catalog of sticker packs for Telegram for every taste in one application. A
 
 ## Features
 
-- [x] Search for stickers by name, description, tags
-- [x] Automatic catalog replenishment, new stickers every day
-- [x] Recommendations based on current trends
-- [x] A rating system to promote or downgrade a sticker pack in the overall ranking
-- [x] Ability to add your own stickers to the general catalog
-- [x] Animated stickers support
-- [x] Displaying similar sticker packs based on likes and open sticker packs
+- **Smart search for stickers**: Find the perfect sticker with ease by searching for it by name, description, or tags
+- **Automatic catalog replenishment**: Discover new stickers every day with our automatic catalog replenishment feature
+- **Recommendations based on current trends**: Stay up-to-date with the latest trends by checking out our recommendations
+- **Rating system**: Help us promote the best sticker packs by rating them and contributing to the overall ranking
+- **Support for animated stickers**: Bring your conversations to life with our support for animated stickers
+- **Display of similar sticker packs**: Discover new sticker packs that you’ll love based on your likes and open sticker packs
 
 ## Client setup
 
