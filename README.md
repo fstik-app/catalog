@@ -16,8 +16,9 @@ Huge catalog of sticker packs for Telegram for every taste in one application. A
 
 ## Client setup
 
-* To get started with the API, you'll need to have Node.js and npm installed on your machine. You can download them from [here](https://nodejs.org/en/download/)
+* To get started with the client-side, you'll need to have Node.js 16.16.0 or higher and npm installed on your machine. You can download them from [here](https://nodejs.org/en/download/)
   * We recommend using the latest LTS version
+
 
 
 ### Installing
