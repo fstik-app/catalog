@@ -102,6 +102,6 @@ module.exports = async (ctx) => {
 
   ctx.result = {
     user_token: userToken,
-    isModerator: userDB.moderator || false,
+    isModerator: userDB?.moderator || false,
   }
 }
