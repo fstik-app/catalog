@@ -61,6 +61,10 @@ To build the project, run:
 
 ```npm run build```
 
+## Client Documentation
+
+Link to the Client documentation: [CLIENT_DOCS.md](CLIENT_DOCS.md)
+
 ## Server setup
 
 * To get started with the API, you'll need to have Node.js and npm installed on your machine. You can download them from [here](https://nodejs.org/en/download/)
