@@ -88,7 +88,25 @@ Link to the API documentation: [API_DOCS.md](API_DOCS.md)
 
 ## NSFW Stickers Checker
 
-For checking if a sticker set contains NSFW stickers, we use a separate service called [fstik-nsfw](https://github.com/LyoSU/fstik-nsfw).
+For checking if a sticker set contains NSFW stickers, we use a [nsfw checker](nsfw) service.
+
+This is a Node.js script that checks Telegram sticker sets for NSFW content using the `nsfwjs` library. It also uses the Telegram Bot API to retrieve information about the sticker sets and the `sharp` library to process images.
+
+**Usage**
+
+1. Clone the repository
+2. Run `npm install`
+3. Create a `.env` file with the following contents:
+```
+BOT_TOKEN=<your bot token>
+MONGODB_URI=<your MongoDB URI>
+ATLAS_MONGODB_URI=<your MongoDB Atlas URI>
+```
+4. Run `npm start`
+
+**How it works**
+
+The script runs indefinitely, periodically checking for new sticker sets to moderate. When it finds a sticker set to moderate, it will download the stickers and check them for NSFW content. If the set contains too much NSFW content, it will mark the set as unsafe and prevent it from being published.
 
 ## License
 
