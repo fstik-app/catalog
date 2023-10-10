@@ -12,6 +12,18 @@ For each sticker pack, users can leave reactions, and for admins, there are mode
 
 When clicking on a sticker pack, a page dedicated to it opens up, and at the bottom, there is a list of similar sticker packs that may interest the user. Additionally, there is a "Share" button. Upon clicking it, a link to the sticker pack's page in the catalog is copied to the clipboard for easy sharing.
 
+## Integration with Telegram
+To interact with Telegram, the application uses [@twa-dev/sdk](https://github.com/twa-dev/SDK), specifically the BackButton from [@twa-dev/sdk/react](https://github.com/twa-dev/SDK/blob/master/src/react/BackButton/Readme.md)
+### User Identification
+For user identification, the application uses ```WebApp.initData```.
+
+### Start params
+The ```WebApp.initDataUnsafe.start_param``` is required for opening sticker packs via links.
+
+### Haptic Feedback
+```WebApp.HapticFeedback``` is employed for tactile interaction with users on mobile devices.
+
+
 ## State Management
 
 [Effector](https://effector.dev/) is used as the state manager, along with [Patronum](https://patronum.effector.dev/), which provides many useful features on top of Effector.
