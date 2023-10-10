@@ -45,9 +45,10 @@ The catalog is based on full-text search Atlas Search and MongoDB Atlas is the o
 10. Copy the connection string and replace the ```<password>``` placeholder with the password of the user you created in step 5
 11. Set the ```MONGODB_URI``` environment variable to the connection string
 
-**Import the data**
+**Import sample data**
 
 We provide a sample date for the minimum functionality of the catalog to work. You can download it [here](stickersets.json).
+
 Follow the instructions [here](https://www.mongodb.com/docs/atlas/import/mongoimport/) to import the data into your cluster.
 
 ### Environment Variables
