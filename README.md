@@ -13,6 +13,42 @@ This is the Telegram Mini App Sticker Catalog.
 
 Huge catalog of sticker packs for Telegram for every taste in one application. A large and convenient set of various and unique stickers for their quick and easy search and installation.
 
+
+## Client setup
+
+* To get started with the API, you'll need to have Node.js and npm installed on your machine. You can download them from [here](https://nodejs.org/en/download/)
+  * We recommend using the latest LTS version
+
+
+### Installing
+
+Go to the client directory:
+
+```cd client```
+
+Set the following environment variables in a .env file or in your shell:
+
+
+| Variable | Description |
+| -------- | ----------- |
+| VITE_API_URL | API server url |
+
+To install the dependencies, run:
+
+```npm install```
+
+To start the dev-server, run:
+
+```npm run dev```
+
+The dev-server will start listening on port `5173` by default.
+
+To build the project, run:
+
+```npm run build```
+
+
+
 ## Server setup
 
 * To get started with the API, you'll need to have Node.js and npm installed on your machine. You can download them from [here](https://nodejs.org/en/download/)
