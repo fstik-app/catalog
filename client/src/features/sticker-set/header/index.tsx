@@ -27,7 +27,7 @@ const Tags = ({ description, tags, name }:
 
         return i > -1
           ? <div className={styles.Tag} key={key}>{d}</div>
-          : <span key={key}>{d}</span>;
+          : <span key={key}>{d} </span>;
       });
   }, [description, tags]);
 
