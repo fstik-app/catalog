@@ -26,4 +26,3 @@ $hasMore
 // export const setError = createEvent<Error>('setError');
 // $error
 //   .on(setError, (_, error) => ({ error }));
-
