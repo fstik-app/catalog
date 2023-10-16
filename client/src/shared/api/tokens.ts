@@ -1,5 +1,5 @@
 import { createEffect } from 'effector';
-import { isString } from 'lodash';
+import isString from 'lodash/isString';
 
 
 import request from './request';

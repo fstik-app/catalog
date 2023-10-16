@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { noop } from 'lodash';
+import noop from 'lodash/noop';
 
 import styles from './stickers.module.scss';
 
