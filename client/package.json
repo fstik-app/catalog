@@ -12,6 +12,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
+    "preview" : "vite preview",
     "tunnel": "cloudflared tunnel --url http://localhost:5173",
     "depcruise": "npx depcruise -v -T dot src | dot -T svg | npx depcruise-wrap-stream-in-html > dependency-graph.html"
   },
