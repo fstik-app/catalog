@@ -10,7 +10,6 @@ export const searchDebounce = debounce({ source: searchQueryUpdated, timeout: SE
 
 export const searchQueryReseted = createEvent();
 $searchQuery.on(searchQueryReseted, () => '');
-$searchQuery.updates.watch(console.log);
 
 // Define events and store
 export const noMoreReceived = createEvent();
