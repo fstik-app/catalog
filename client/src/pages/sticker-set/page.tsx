@@ -10,14 +10,14 @@ import { StickerSetFullSkeleton } from '@/shared/ui/sticker-set/skeleton/sticker
 import { $stickerSets } from '@/entities/sticker-set/model';
 import { StickerSetFull } from '@/features/sticker-set/sticker-set-full';
 import { SelectedSticker } from '@/features/sticker-select';
-import { scrollToTop } from '@/shared/hooks';
+import { useScrollToTop } from '@/shared/hooks';
 import { ListRecommendationsWidget } from '@/widgets/catalog-list/ui/recommendations';
 import { ListRecommendationsDivider } from '@/features/recommendations/sticker-page';
 import { $isModerator } from '@/shared/session';
 
 
 export const StickerSetPage: FC = () => {
-  scrollToTop();
+  useScrollToTop();
   const isModerator = useUnit($isModerator);
   const isLoading = useUnit(getStickerSetByName.pending);
 

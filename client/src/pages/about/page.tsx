@@ -2,9 +2,12 @@ import { BackButton } from '@twa-dev/sdk/react';
 import { Link } from 'atomic-router-react';
 
 import { routes } from '@/app/router';
+import { useScrollToTop } from '@/shared/hooks';
 
 
 export const Privacy = () => {
+  useScrollToTop();
+
   return (
     <>
       <BackButton onClick={routes.root.open} />
