@@ -11,28 +11,6 @@ import packageJson from './package.json';
 
 const WRONG_CODE = 'import { bpfrpt_proptype_WindowScroller } from "../WindowScroller.js";';
 
-function reactVirtualized () {
-  return {
-    name: 'flat:react-virtualized',
-    // Note: we cannot use the `transform` hook here
-    //       because libraries are pre-bundled in vite directly,
-    //       plugins aren't able to hack that step currently.
-    //       so instead we manually edit the file in node_modules.
-    //       all we need is to find the timing before pre-bundling.
-    configResolved () {
-      const file = require
-        .resolve('react-virtualized')
-        .replace(
-          path.join('dist', 'commonjs', 'index.js'),
-          path.join('dist', 'es', 'WindowScroller', 'utils', 'onScroll.js'),
-        );
-      const code = fs.readFileSync(file, 'utf8');
-      const modified = code.replace(WRONG_CODE, '');
-
-      fs.writeFileSync(file, modified);
-    },
-  };
-}
 export default defineConfig({
   plugins: [
     reactVirtualized(),
@@ -51,6 +29,18 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks (id) {
+          // creating a chunk to @open-ish deps. Reducing the vendor chunk size
+          if (id.includes('swiper')) {
+            return 'swiper';
+          }
+        },
+      },
     },
   },
   // worker: {
@@ -74,3 +64,26 @@ export default defineConfig({
   //   },
   // },
 });
+
+function reactVirtualized () {
+  return {
+    name: 'flat:react-virtualized',
+    // Note: we cannot use the `transform` hook here
+    //       because libraries are pre-bundled in vite directly,
+    //       plugins aren't able to hack that step currently.
+    //       so instead we manually edit the file in node_modules.
+    //       all we need is to find the timing before pre-bundling.
+    configResolved () {
+      const file = require
+        .resolve('react-virtualized')
+        .replace(
+          path.join('dist', 'commonjs', 'index.js'),
+          path.join('dist', 'es', 'WindowScroller', 'utils', 'onScroll.js'),
+        );
+      const code = fs.readFileSync(file, 'utf8');
+      const modified = code.replace(WRONG_CODE, '');
+
+      fs.writeFileSync(file, modified);
+    },
+  };
+}
