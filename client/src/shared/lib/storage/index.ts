@@ -1,5 +1,5 @@
 import { createEffect } from 'effector';
-import isString from 'lodash/isString';
+import { isString } from 'lodash-es';
 
 import { STORAGE_KEYS } from '@/shared/constants';
 

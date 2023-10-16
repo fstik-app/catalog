@@ -1,4 +1,4 @@
-import has from 'lodash/has';
+import { has } from 'lodash-es';
 
 
 const keys = ['auth_date', 'hash', 'id'];

@@ -1,5 +1,5 @@
 import qs from 'qs';
-import merge from 'lodash/merge';
+import { merge } from 'lodash-es';
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 

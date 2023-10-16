@@ -2,7 +2,7 @@ import { ReactNode, useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as ISwiper } from 'swiper';
 import { FreeMode } from 'swiper/modules';
-import noop from 'lodash/noop';
+import { noop } from 'lodash-es';
 import c from 'classnames';
 
 import { StickersProps } from './types';
