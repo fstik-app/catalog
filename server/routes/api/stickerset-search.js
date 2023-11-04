@@ -183,6 +183,9 @@ async function searchStickerSet (query, sort, matchQuery, pagination) {
       },
     },
     ...sort,
+    {
+      $limit: 1000,
+    },
     pagination,
   ]))[0]
 }
@@ -390,6 +393,9 @@ async function popularStickerSet (matchQuery, pagination) {
         adds: -1,
       },
     },
+    {
+      $limit: 1000,
+    },
     pagination,
   ]))[0]
 }
@@ -417,6 +423,9 @@ async function trendingStickerSet (matchQuery, pagination) {
         ...matchQuery,
       },
     },
+    {
+      $limit: 1000,
+    },
     pagination,
   ]).sort({
     publishDate: -1,
@@ -426,6 +435,11 @@ async function trendingStickerSet (matchQuery, pagination) {
 async function newStickerSet (matchQuery, pagination) {
   return (await db.atlasCollections.StickerSet.aggregate([
     {
+      $sort: {
+        publishDate: -1,
+      },
+    },
+    {
       $match: {
         ...matchQuery,
         'reaction.total': {
@@ -434,9 +448,7 @@ async function newStickerSet (matchQuery, pagination) {
       },
     },
     {
-      $sort: {
-        publishDate: -1,
-      },
+      $limit: 1000,
     },
     pagination,
   ]))[0]
