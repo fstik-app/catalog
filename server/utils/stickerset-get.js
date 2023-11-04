@@ -82,6 +82,7 @@ module.exports = async (stickerSet) => {
     safe: about?.safe,
     verified: about?.verified,
     type: stickerSetType,
+    kind: stickerSet.packType,
     reaction: stickerSet.reaction,
     installations: stickerSet.installations || {},
     stickers,

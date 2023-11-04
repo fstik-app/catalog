@@ -247,6 +247,7 @@ async function likeStickerSet (user, matchQuery, pagination, findPublicQuery) {
         'metadata.type': 'react',
         'metadata.value': 'like',
         'metadata.user': user._id,
+        ...matchQuery,
       },
     },
     {
@@ -258,6 +259,15 @@ async function likeStickerSet (user, matchQuery, pagination, findPublicQuery) {
       $limit: 100,
     },
   ])
+
+  if (lastLikes.length <= 0) {
+    return {
+      stickerSets: [],
+      totalCount: [{
+        count: 0,
+      }],
+    }
+  }
 
   const lastLikesIds = lastLikes.map((like) => {
     return like.metadata.stickerSet
@@ -402,7 +412,7 @@ async function trendingStickerSet (matchQuery, pagination) {
     {
       $match: {
         'reaction.total': {
-          $gt: 10,
+          $gt: 5,
         },
         ...matchQuery,
       },
@@ -416,11 +426,11 @@ async function trendingStickerSet (matchQuery, pagination) {
 async function newStickerSet (matchQuery, pagination) {
   return (await db.atlasCollections.StickerSet.aggregate([
     {
-      $match: matchQuery,
-    },
-    {
       $match: {
-        'reaction.total': { $gt: -10 },
+        ...matchQuery,
+        'reaction.total': {
+          $gt: -10,
+        },
       },
     },
     {
@@ -432,11 +442,12 @@ async function newStickerSet (matchQuery, pagination) {
   ]))[0]
 }
 
-async function getStickerSet (query = '', type = '', skip = 0, limit = 25, findPublic, findSafe, user) {
+async function getStickerSet (query = '', kind = 'regular', type = '', skip = 0, limit = 25, findPublic, findSafe, user) {
   const findPublicQuery = findPublic !== false
 
   const matchQuery = {
     public: findPublicQuery,
+    packType: kind,
   }
 
   if (findSafe === true) {
@@ -556,7 +567,7 @@ module.exports = async (ctx) => {
   }
 
   const { user_token, ...props } = ctx.props
-  const { query, type } = props
+  const { query, kind, type } = props
 
   if (type === 'verified') {
     props.user = ctx.state?.user?._id?.toString()
@@ -617,7 +628,7 @@ module.exports = async (ctx) => {
     const consoleLogName = `stickerSet ${crypto.randomBytes(8).toString('hex')}`
 
     console.time(consoleLogName)
-    result = await getStickerSet(query, type, skip, limit, findPublic, findSafe, ctx.state.user)
+    result = await getStickerSet(query, kind, type, skip, limit, findPublic, findSafe, ctx.state.user)
     console.timeEnd(consoleLogName)
 
     if (result.stickerSets.length <= 0) {

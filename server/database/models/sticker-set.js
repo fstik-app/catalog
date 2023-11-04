@@ -53,6 +53,7 @@ const stickerSetsSchema = mongoose.Schema({
   public: {
     type: Boolean,
     default: false,
+    index: true,
   },
   publishDate: {
     type: Date,
