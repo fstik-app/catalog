@@ -197,11 +197,14 @@ export const Stickers = ({ type, kind, stickers, packIndex, isAndroid, onClick =
         );
 
       if (kind === CATALOG_KIND_ENUM.EMOJI) {
-        if (index % 2 === 0) {
+        if (index < stickerComponents.length / 2) {
           return wrapper(<>
             {stickerComponent}
             <div style={{ marginBottom: '0.3rem' }}/>
-            {stickerComponents[index + 1]?.stickerComponent && stickerComponents[index + 1].stickerComponent}
+            {
+              stickerComponents[index + Math.ceil(stickerComponents.length / 2)]?.stickerComponent
+              && stickerComponents[index + Math.ceil(stickerComponents.length / 2)].stickerComponent
+            }
           </>);
         }
       } else {
