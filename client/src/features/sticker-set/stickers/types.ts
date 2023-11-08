@@ -8,4 +8,5 @@ export interface StickersProps {
   type: string;
   onClick?: AnyToVoidFunction;
   showFull?: boolean;
+  kind: string;
 }

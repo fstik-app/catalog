@@ -1,15 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'atomic-router-react';
 import { useMemo, MouseEvent } from 'react';
+import { useUnit } from 'effector-react';
 
 import styles from './header.module.scss';
 import { HeaderProps } from './types';
 
-import { ADD_STICKER_SET_URL } from '@/shared/constants';
+import { ADD_STICKER_SET_URL, CATALOG_KIND_ENUM } from '@/shared/constants';
 import { openTelegramLink } from '@/shared/lib/utils';
 import { routes } from '@/app/router';
 import { AddShareButtonsSticky, Button } from '@/shared/ui';
 import haptic from '@/shared/lib/haptic';
+import { $catalogKind } from '@/entities/menu/model';
 
 
 const Tags = ({ description, tags, name }:
@@ -74,11 +76,12 @@ export const AddButtonRound = ({ name, length }: {
   length: number,
 }) => {
   const { t } = useTranslation();
+  const kind = useUnit($catalogKind); // TODO
 
   return (
     <AddShareButtonsSticky
       onClick={(evt) => onAddButtonClick(evt, name)}
-      text={`${t('add')} ${length} ${t('STICKERS')}`}
+      text={`${t('add')} ${length} ${t(kind === CATALOG_KIND_ENUM.EMOJI ? 'EMOJIS' : 'STICKERS')}`}
       name={name}
     />
   );

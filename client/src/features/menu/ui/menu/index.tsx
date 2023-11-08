@@ -3,8 +3,9 @@ import { useUnit } from 'effector-react';
 import { useTranslation } from 'react-i18next';
 import c from 'classnames';
 
+import { MenuButtonProps } from '../types';
+
 import styles from './menu.module.scss';
-import { MenuButtonProps } from './types';
 
 import { TabsScroller } from '@/features/menu/ui/tab-scroller';
 import { useTabsScroller } from '@/features/menu/ui/tab-scroller/hooks/use-tab-scroller';

@@ -5,6 +5,7 @@ import api from '../api';
 import { $token } from '../session';
 
 import { IStickerSet } from '@/types';
+import { $catalogKind } from '@/entities/menu/model';
 
 
 export const recommendationsRequested = createEvent<string[]>();
@@ -17,12 +18,14 @@ export const getRecommendationsFx = attach({
   source: {
     user_token: $token,
     recommendations: $recommendations,
+    kind: $catalogKind,
   },
-  mapParams: (stickerSetIds: string[], { user_token, recommendations }) => ({
+  mapParams: (stickerSetIds: string[], { user_token, recommendations, kind }) => ({
     query: stickerSetIds,
     skip: recommendations[stickerSetIds[0]]?.length || 0,
     type: 'more',
     user_token,
+    kind,
   }),
 });
 

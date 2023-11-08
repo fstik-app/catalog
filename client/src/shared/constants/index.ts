@@ -23,10 +23,14 @@ export enum MENU_OPTIONS_ENUM {
   trending = 'trending',
   verified = 'verified',
   // main = 'main',
-  emojies = 'emojies',
   disabled = 'disabled',
 
   default = 'verified',
+}
+
+export enum CATALOG_KIND_ENUM {
+  STICKER = 'regular',
+  EMOJI = 'custom_emoji',
 }
 
 export enum STORAGE_KEYS {

@@ -16,6 +16,7 @@ import 'swiper/scss/pagination';
 import { getMobileOS } from '@/shared/lib/utils';
 import { IS_ANDROID } from '@/shared/environment';
 import { stickerSelected } from '@/entities/sticker/model';
+import { $catalogKind } from '@/entities/menu/model';
 
 
 type StickerSetProps =
@@ -29,6 +30,7 @@ export const StickerSet: FC<StickerSetProps> = ({
   stickerSet,
 })=> {
   const isModerator = useUnit($isModerator);
+  const catalogKind = useUnit($catalogKind);
   const currentOs = useMemo(getMobileOS, []);
 
   const set = useStickerSet(stickerSetId);
@@ -53,6 +55,7 @@ export const StickerSet: FC<StickerSetProps> = ({
     />
     <Stickers
       type={stickerSetRest.type}
+      kind={catalogKind}
       stickers={stickers}
       isAndroid={IS_ANDROID}
       packIndex={index}

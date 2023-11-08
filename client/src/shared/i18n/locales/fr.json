@@ -1,7 +1,7 @@
 {
   "add": "AJOUTER",
   "share": "PARTAGER",
-  "copied": "COPIÉ !",
+  "copied": "COPIÉ!",
   "catalog": "Catalogue",
   "description": "Description",
   "hello": "Bonjour",
@@ -9,7 +9,8 @@
   "search-placeholder": "Rechercher des autocollants",
   "tag": "étiquette",
   "recommendations": "recommandations",
-  "relatedStickerSets": "Ensembles d'autocollants associés",
+  "relatedStickerSets": "Ensembles d'autocollants pareils",
+  "relatedCustomEmojis": "Custom emojis pareils",
   "trends": "tendances",
   "auth-error": "Le serveur est indisponible, veuillez réessayer plus tard",
   "menu": {
@@ -21,6 +22,9 @@
   },
   "main-description": "😻 Vous pouvez trouver de nouveaux packs d'autocollants dans notre catalogue",
   "STICKERS": "AUTOCOLLANTS",
+  "Stickers": "Autocollants",
+  "EMOJIS": "EMOJIS",
+  "Emojis": "Emojis",
   "meta": {
     "description": "@fstikbot catalogue d'autocollants Telegram",
     "title": "Catalogue de stickers préférés"

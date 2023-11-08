@@ -13,7 +13,7 @@ import {
 } from '@/entities/search/model';
 import { $authenticationStatus, AuthStatus } from '@/shared/session';
 import { $$stickerSetsCount, stickerSetsAdded, stickerSetsReseted } from '@/entities/sticker-set/model';
-import { $mainMenu } from '@/entities/menu/model';
+import { $catalogKind, $mainMenu } from '@/entities/menu/model';
 import { scrollLoaderIntersected } from '@/shared/ui/sticker-set/model';
 import { MENU_OPTIONS_ENUM } from '@/shared/constants';
 import { recommendationsReseted } from '@/shared/recommendations';
@@ -50,6 +50,31 @@ sample({
   },
   fn: ({ query }) => query,
   target: [hasMoreReceived, recommendationsReseted, stickerSetsReseted, searchStickerSetsFx],
+});
+
+// kind changed
+sample({
+  clock: $catalogKind,
+  source: {
+    authStatus: $authenticationStatus,
+    isFetching: searchStickerSetsFx.pending,
+    query: $searchQuery,
+  },
+  filter ({ isFetching, authStatus }) {
+
+    if (authStatus === AuthStatus.Initial
+      || authStatus === AuthStatus.Pending) {
+      return false;
+    }
+
+    if (isFetching) {
+      return false;
+    }
+
+    return true;
+  },
+  fn: ({ query }) => query,
+  target: [recommendationsReseted, stickerSetsReseted, searchStickerSetsFx],
 });
 
 // menu changed

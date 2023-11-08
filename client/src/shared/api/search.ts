@@ -13,6 +13,7 @@ type fetchStickerSetsType = {
   skip: number,
   type: string,
   user_token: string | null,
+  kind: string,
 };
 
 export const fetchStickersSetsFx = createEffect(async ({
@@ -21,6 +22,7 @@ export const fetchStickersSetsFx = createEffect(async ({
   skip = 0,
   type = '',
   user_token,
+  kind,
 }: fetchStickerSetsType) => {
   const { data } = await request.post<{ stickerSets: IStickerSet[] }, fetchStickerSetsType>('searchStickerSet', {
     query,
@@ -28,6 +30,7 @@ export const fetchStickersSetsFx = createEffect(async ({
     skip,
     type,
     user_token,
+    kind,
   });
 
   let now = Date.now();

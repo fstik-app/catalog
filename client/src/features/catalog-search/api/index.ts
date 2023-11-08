@@ -2,7 +2,7 @@ import { attach } from 'effector';
 
 import api from '@/shared/api';
 import { $token } from '@/shared/session';
-import { $mainMenu } from '@/entities/menu/model';
+import { $catalogKind, $mainMenu } from '@/entities/menu/model';
 import { DEFAULT_LIMIT } from '@/shared/constants';
 import { $stickerSets } from '@/entities/sticker-set/model';
 import { $searchQuery } from '@/entities/search';
@@ -15,14 +15,16 @@ export const searchStickerSetsFx = attach({
     user_token: $token,
     menu: $mainMenu,
     stickerSets: $stickerSets,
+    kind: $catalogKind,
   },
-  mapParams: (_: unknown, { query, user_token, menu, stickerSets }) => {
+  mapParams: (_: unknown, { query, user_token, menu, stickerSets, kind }) => {
     return ({
       user_token,
       query,
       limit: DEFAULT_LIMIT,
       skip: stickerSets.length,
       type: query.length > 0 ? '' : menu,
+      kind,
     });
   },
 });

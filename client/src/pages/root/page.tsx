@@ -1,7 +1,6 @@
-import { SelectedSticker } from '@/features/sticker-select';
-import { Catalog } from '@/widgets/catalog-list';
-import { CatalogHeadWidget } from '@/widgets/catalog-head';
 import { usePageTitle } from '@/shared/hooks';
+import { SelectedSticker } from '@/features/sticker-select';
+import { Catalog, CatalogHeadWidget, CatalogFooterWidget } from '@/widgets';
 
 
 export const RootPage = () => {
@@ -12,6 +11,7 @@ export const RootPage = () => {
       <CatalogHeadWidget/>
       <SelectedSticker/>
       <Catalog />
+      <CatalogFooterWidget />
     </>
   );
 };

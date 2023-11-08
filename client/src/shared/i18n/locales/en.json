@@ -10,6 +10,7 @@
   "tag": "tag",
   "recommendations": "recommendations",
   "relatedStickerSets": "Related sticker sets",
+  "relatedCustomEmojis": "Related custom emojis",
   "trends": "trends",
   "auth-error": "Server is unavailable, try again later",
   "menu": {
@@ -21,6 +22,9 @@
   },
   "main-description": "😻 You can find new sticker packs in our catalog",
   "STICKERS": "STICKERS",
+  "Stickers": "Stickers",
+  "EMOJIS": "EMOJIS",
+  "Emojis": "Emojis",
   "meta": {
     "description": "@fstikbot telegram stickers catalog",
     "title": "Favorite Stickers Catalog"
