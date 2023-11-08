@@ -1,5 +1,7 @@
 import { REACTION_ENUM } from '.';
 
+import { CATALOG_KIND_ENUM } from '@/shared/constants';
+
 
 export interface ISticker {
   width: number;
@@ -39,6 +41,7 @@ export interface IStickerSet {
   stickers: ISticker[];
 
   type: StickerSetEnum;
+  kind: CATALOG_KIND_ENUM;
 
   safe: true;
   banned?: boolean;

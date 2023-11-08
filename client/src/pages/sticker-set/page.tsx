@@ -14,12 +14,15 @@ import { useScrollToTop } from '@/shared/hooks';
 import { ListRecommendationsWidget } from '@/widgets/catalog-list/ui/recommendations';
 import { ListRecommendationsDivider } from '@/features/recommendations/sticker-page';
 import { $isModerator } from '@/shared/session';
+import { $catalogKind, setCatalogKind } from '@/entities/menu/model';
+import { CATALOG_KIND_ENUM } from '@/shared/constants';
 
 
 export const StickerSetPage: FC = () => {
   useScrollToTop();
   const isModerator = useUnit($isModerator);
   const isLoading = useUnit(getStickerSetByName.pending);
+  const kind = useUnit($catalogKind);
 
   const { stickerSetName } = useUnit(routes.stickerSet.$params);
 
@@ -30,6 +33,16 @@ export const StickerSetPage: FC = () => {
       return stickerSets.find(({ name }) => name.toLowerCase() === stickerSetName?.toLowerCase()) || null;
     },
   });
+
+  useEffect(() => {
+    if (kind !== stickerSet?.kind) {
+      setCatalogKind(
+        stickerSet?.kind === CATALOG_KIND_ENUM.STICKER
+          ? CATALOG_KIND_ENUM.STICKER
+          : CATALOG_KIND_ENUM.EMOJI,
+      );
+    }
+  }, [kind, isLoading]);
 
   useEffect(() => {
     if (!stickerSet && !isLoading) {
