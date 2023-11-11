@@ -9,9 +9,9 @@ export type QueueItem = {
 class CancellationException extends Error { cancellation = true; }
 
 export default class FetchQueue {
-  private tickTime = 200;
+  private tickTime = 100;
 
-  private interval?: NodeJS.Timer;
+  private interval?: NodeJS.Timeout;
 
   private queue: QueueItem[] = [];
 
