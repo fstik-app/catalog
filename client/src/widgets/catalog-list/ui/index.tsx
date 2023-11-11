@@ -86,14 +86,17 @@ export const Catalog = () => {
                     onRowsRendered={onRowsRendered}
                     rowCount={rowCount}
                     rowHeight={({ index }) => { // TODO
-                      if (index === 0) return 250;
-                      {if (stickerSets[index]) {
-                        return stickerSets[index].description
-                          ? 210
-                          : 190;
+                      let h = index === 0 ? 40 : 0;
+
+                      if (stickerSets[index]) {
+                        stickerSets[index].description
+                          ? h += 210
+                          : h += 190;
                       } else {
-                        return 210;
-                      }}
+                        h += 210;
+                      }
+
+                      return h;
                     }} rowRenderer={rowRenderer}
                     scrollTop={scrollTop} />
                 )}
