@@ -7,6 +7,9 @@
   align-items: flex-end;
   justify-content: flex-end;
 
+  user-select: none;
+  cursor: pointer;
+
   color: theme.$hint_color !important;
   font-style: italic;
   font-size: 1rem;
