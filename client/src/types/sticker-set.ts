@@ -46,6 +46,8 @@ export interface IStickerSet {
   safe: true;
   banned?: boolean;
   public?: boolean;
+
+  sponsored?: boolean;
 }
 
 export interface IStickerSetId {

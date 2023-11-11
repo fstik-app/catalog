@@ -51,5 +51,7 @@
       "description": "Pour récupérer votre récompense, cliquez sur le bouton ci-dessous",
       "button": "Récupérer"
     }
-  }
+  },
+  "sponsored": "#sponsorisé",
+  "mail": "support@fstik.app"
 }

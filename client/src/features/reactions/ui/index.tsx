@@ -10,7 +10,7 @@ import styles from './reactions.module.scss';
 
 import { roundReaction } from '@/shared/lib/utils';
 import { REACTION_ENUM } from '@/types';
-import { ReactionButton } from '@/shared/ui';
+import { ReactionButton, Sponsored } from '@/shared/ui';
 import { recommendationsRequested } from '@/shared/recommendations';
 
 
@@ -25,6 +25,7 @@ export const Reactions = (
     banned,
     public: isPublic,
     withRecommendations,
+    sponsored,
   }: ReactionsProps,
 ) => {
   return (
@@ -71,6 +72,9 @@ export const Reactions = (
               />
             </>
           )
+        }
+        {
+          sponsored && <Sponsored />
         }
       </div>
     </div>

@@ -47,6 +47,7 @@ export const StickerSetFull: FC<StickerSetComponentInterface> = (
         banned={stickerSet.banned}
         key={stickerSet.id}
         public={stickerSet.public}
+        sponsored={stickerSet.sponsored}
       />
       <Stickers
         type={stickerSet.type}
@@ -55,6 +56,7 @@ export const StickerSetFull: FC<StickerSetComponentInterface> = (
         showFull
         onClick={stickerSelected}
         packIndex={0}
+        kind={stickerSet.kind}
       />
       <AddButtonRound
         name={stickerSet.name}

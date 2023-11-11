@@ -148,8 +148,6 @@ export const Stickers = ({ type, kind, stickers, packIndex, isAndroid, onClick =
       };
     });
 
-    const results = [];
-
     // const wrappedComponents = stickerComponents.map((component, index) => {
     //   if (kind === 'emoji') {
     //     // If kind is 'emoji', wrap two elements together
@@ -179,6 +177,7 @@ export const Stickers = ({ type, kind, stickers, packIndex, isAndroid, onClick =
               width: computedWidth / kindRatio,
               maxWidth: STICKER_MAX_WIDTH / kindRatio,
               height: STICKER_HEIGHT,
+              padding: kind === CATALOG_KIND_ENUM.EMOJI && showFull ? '0 0.5rem' : '1rem 0.5rem',
             }}
           >
             {c}
@@ -196,7 +195,7 @@ export const Stickers = ({ type, kind, stickers, packIndex, isAndroid, onClick =
           </SwiperSlide>
         );
 
-      if (kind === CATALOG_KIND_ENUM.EMOJI) {
+      if (kind === CATALOG_KIND_ENUM.EMOJI && !showFull) {
         if (index < stickerComponents.length / 2) {
           return wrapper(<>
             {stickerComponent}

@@ -51,5 +51,7 @@
       "description": "Чтобы получить награду, нажмите на кнопку ниже",
       "button": "Получить"
     }
-  }
+  },
+  "sponsored": "#sponsored",
+  "mail": "support@fstik.app"
 }

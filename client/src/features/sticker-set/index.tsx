@@ -70,6 +70,7 @@ export const StickerSet: FC<StickerSetProps> = ({
       safe={stickerSetRest.safe}
       banned={stickerSetRest.banned}
       public={stickerSetRest.public}
+      sponsored={data.sponsored}
       withRecommendations
     />
   </>);

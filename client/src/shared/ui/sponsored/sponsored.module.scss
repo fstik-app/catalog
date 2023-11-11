@@ -1,0 +1,13 @@
+@use 'src/app/styles/theme.scss';
+
+.Sponsored {
+  height: 100%;
+  
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  color: theme.$hint_color !important;
+  font-style: italic;
+  font-size: 1rem;
+}

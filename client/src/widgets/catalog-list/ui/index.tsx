@@ -97,7 +97,8 @@ export const Catalog = () => {
                       }
 
                       return h;
-                    }} rowRenderer={rowRenderer}
+                    }}
+                    rowRenderer={rowRenderer}
                     scrollTop={scrollTop} />
                 )}
               </AutoSizer>

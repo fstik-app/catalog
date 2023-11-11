@@ -51,5 +51,7 @@
       "description": "To pick up your reward, click on the button below",
       "button": "Pick up"
     }
-  }
+  },
+  "sponsored": "#sponsored",
+  "mail": "support@fstik.app"
 }

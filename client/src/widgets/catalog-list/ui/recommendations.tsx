@@ -90,15 +90,19 @@ export const ListRecommendationsWidget = ({ stickerSet }: { stickerSet: ISticker
                     onRowsRendered={onRowsRendered}
                     rowCount={rowCount}
                     rowHeight={({ index }) => { // TODO
-                      if (index === 0) return 250;
-                      {if (recommendations[index]) {
-                        return recommendations[index].description
-                          ? 210
-                          : 190;
+                      let h = 0;
+
+                      if (recommendations[index]) {
+                        recommendations[index].description
+                          ? h += 210
+                          : h += 190;
                       } else {
-                        return 210;
-                      }}
-                    }} rowRenderer={rowRenderer}
+                        h += 210;
+                      }
+
+                      return h;
+                    }}
+                    rowRenderer={rowRenderer}
                     scrollTop={scrollTop} />
                 )}
               </AutoSizer>
