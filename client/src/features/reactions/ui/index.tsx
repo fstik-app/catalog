@@ -53,7 +53,7 @@ export const Reactions = (
       </div>
       <div>
         {
-          isModerator && (
+          isModerator && !sponsored && (
             <>
               <ReactionButton
                 onClick={() => banUserFx(id)}
