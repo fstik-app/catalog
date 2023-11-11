@@ -11,6 +11,8 @@ import styles from './search.module.scss';
 
 import { CircleInfo, CircleXMark, SearchIcon } from '@/shared/ui/icons';
 import { routes } from '@/app/router';
+import { $catalogKind } from '@/entities/menu/model';
+import { CATALOG_KIND_ENUM } from '@/shared/constants';
 
 
 export const Search: FC<SearchProps> = ({
@@ -21,6 +23,7 @@ export const Search: FC<SearchProps> = ({
   value,
 }) => {
   const { t } = useTranslation();
+  const kind = useUnit($catalogKind);
   const searchQuery = useUnit(queryStore);
 
   return (
@@ -31,7 +34,7 @@ export const Search: FC<SearchProps> = ({
           <input
             value={value || searchQuery}
             type="text"
-            placeholder={t('search-placeholder') || ''}
+            placeholder={`${t('search-placeholder')} ${t(kind === CATALOG_KIND_ENUM.STICKER ? 'STICKERS' : 'EMOJIS').toLowerCase()}`}
             onChange={onChange}
           />
         </label>
