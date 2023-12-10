@@ -14,6 +14,7 @@ export const routes = {
   notFound: createRoute(),
   root: createRoute(),
   about: createRoute(),
+  privacy: createRoute(),
 };
 
 export const controls = createRouterControls();
@@ -35,6 +36,10 @@ export const router = createHistoryRouter({
     {
       path: '/about',
       route: routes.about,
+    },
+    {
+      path: '/privacy',
+      route: routes.privacy,
     },
   ],
   controls,

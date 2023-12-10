@@ -1,15 +1,15 @@
 import { createRouteView } from 'atomic-router-react';
 
 import { currentRoute } from './model';
-import { About } from './page';
+import { Privacy } from './page';
 
 import { PageLayout } from '@/shared/ui/layouts';
 
 
-export const AboutRoute = {
+export const PrivacyRoute = {
   view: createRouteView({
     route: currentRoute,
-    view: About,
+    view: Privacy,
   }),
   layout: PageLayout,
   route: currentRoute,
