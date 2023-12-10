@@ -55,7 +55,7 @@ export const StickerSet: FC<StickerSetProps> = ({
     />
     <Stickers
       type={stickerSetRest.type}
-      kind={catalogKind}
+      kind={data.kind}
       stickers={stickers}
       isAndroid={IS_ANDROID}
       packIndex={index}

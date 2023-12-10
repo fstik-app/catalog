@@ -28,6 +28,7 @@
 
   &.isOpen {
     bottom: -4px;
+    border-bottom: 4px solid theme.$bg_color;
   }
 
   .buttonsWrapper {
@@ -42,7 +43,7 @@
     overflow-x: auto;
     overflow-y: hidden;
 
-    height: 3rem;
+    padding: 0.3rem 0rem;
 
     background-color: theme.$bg_color;
   }
