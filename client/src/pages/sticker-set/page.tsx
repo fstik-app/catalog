@@ -19,12 +19,13 @@ import { CATALOG_KIND_ENUM } from '@/shared/constants';
 
 
 export const StickerSetPage: FC = () => {
-  useScrollToTop();
   const isModerator = useUnit($isModerator);
   const isLoading = useUnit(getStickerSetByName.pending);
   const kind = useUnit($catalogKind);
 
   const { stickerSetName } = useUnit(routes.stickerSet.$params);
+
+  useScrollToTop([stickerSetName]);
 
   const stickerSet = useStoreMap({
     store: $stickerSets,
