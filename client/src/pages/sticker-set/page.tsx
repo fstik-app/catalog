@@ -36,7 +36,7 @@ export const StickerSetPage: FC = () => {
   });
 
   useEffect(() => {
-    if (kind !== stickerSet?.kind) {
+    if (stickerSet && kind !== stickerSet?.kind) {
       setCatalogKind(
         stickerSet?.kind === CATALOG_KIND_ENUM.STICKER
           ? CATALOG_KIND_ENUM.STICKER
