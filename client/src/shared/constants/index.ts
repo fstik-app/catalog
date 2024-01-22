@@ -2,8 +2,6 @@ export const STICKER_HEIGHT = 60;
 
 export const STICKER_MAX_WIDTH = 100;
 
-export const SWIPER_STICKER_MARGIN_RIGHT = 16;
-
 export const DEFAULT_LIMIT = 15;
 
 export const SEARCH_DEBOUNCE = 1000;

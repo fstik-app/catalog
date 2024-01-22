@@ -8,6 +8,14 @@
   flex-direction: row;
   justify-content: flex-start;
 
+  padding: 0px;
+  list-style: none;
+
+  scrollbar-color: transparent transparent;
+  scrollbar-width: none;
+
+  overflow: auto;
+
   &.showFull {
     margin-top: 1rem;
     display: flex;

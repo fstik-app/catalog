@@ -138,3 +138,28 @@ svg {
 svg:hover {
   cursor: pointer;
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: auto; /* Make the list scrollable vertically */
+
+  /* Custom scrollbar styles */
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+}
+
+/* Webkit browsers (Chrome, Safari) */
+ul::-webkit-scrollbar {
+  height: 0px;
+  width: 0px; /* Adjust the width as needed */
+}
+
+ul::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+ul::-webkit-scrollbar-track {
+  background-color: transparent;
+}

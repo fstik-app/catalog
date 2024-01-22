@@ -1,41 +1,20 @@
 import { ReactNode, useMemo } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Swiper as ISwiper } from 'swiper';
-import { FreeMode } from 'swiper/modules';
 import { noop } from 'lodash-es';
 import c from 'classnames';
 
 import { StickersProps } from './types';
 import styles from './stickers.module.scss';
 
-import { CATALOG_KIND_ENUM, STICKER_HEIGHT, STICKER_MAX_WIDTH, SWIPER_STICKER_MARGIN_RIGHT } from '@/shared/constants';
+import { CATALOG_KIND_ENUM, STICKER_HEIGHT, STICKER_MAX_WIDTH } from '@/shared/constants';
 import { ISticker } from '@/types';
 import type RLottie from '@/shared/lib/rlottie/RLottie';
 import { AnimatedSticker, ImageMedia } from '@/entities/sticker';
 import { useIntersectionObserver } from '@/shared/lib/telegram-web';
+import { IS_ANDROID } from '@/shared/environment';
 
 
-export const Stickers = ({ type, kind, stickers, packIndex, isAndroid, onClick = () => noop, showFull }: StickersProps) => {
+export const Stickers = ({ type, kind, stickers, packIndex, onClick = () => noop, showFull }: StickersProps) => {
   const kindRatio = kind === CATALOG_KIND_ENUM.EMOJI ? 1.75 : 1;
-  const IS_ANDROID = isAndroid;
-
-  const allWidth = useMemo(() => {
-    if (IS_ANDROID) {
-      return 5000;
-    }
-
-    const width = stickers.reduce((a: number, { width, height }) => {
-      return Math.round(STICKER_HEIGHT * width / height) + SWIPER_STICKER_MARGIN_RIGHT + a;
-    }, 0);
-
-    return width < 450 ? width : width - 300;
-  }, [IS_ANDROID, stickers]);
-
-  const onSetTranslateHandler = useMemo(() => (swiper: ISwiper) => {
-    if (~swiper.translate > allWidth) {
-      swiper.setTranslate(-allWidth);
-    }
-  }, [allWidth]);
 
   const { observe: observeIntersectionForMedia } = useIntersectionObserver({
     rootRef: { current: null },
@@ -46,40 +25,6 @@ export const Stickers = ({ type, kind, stickers, packIndex, isAndroid, onClick =
     rootRef: { current: null },
     margin: 0,
   });
-
-  const Wrapper = useMemo(() => IS_ANDROID
-    ? (node: ReactNode) => (
-      <div
-        className={c(styles.Main, styles.android, showFull && styles.showFull)}>
-        {node}
-      </div>
-    )
-    : (node: ReactNode) => (
-      <Swiper
-        className={styles.Main}
-
-        modules={[FreeMode]}
-        mousewheel={false}
-
-        centeredSlides={false}
-        pagination={false}
-        spaceBetween={0}
-        slidesPerView={'auto'}
-
-        onSetTranslate={onSetTranslateHandler}
-        freeMode={{
-          sticky: false,
-          enabled: true,
-          momentum: true,
-          momentumVelocityRatio: 1,
-        }}
-        centeredSlidesBounds={true}
-        // loopFillGroupWithBlank={true}
-        slidesPerGroup={1}
-      >
-        {node}
-      </Swiper>
-    ), [IS_ANDROID, onSetTranslateHandler, showFull]);
 
   const stickersR = useMemo(() => {
     const stickerComponents = stickers.map(({ thumb, file_id, height, width }: ISticker, i: number) => {
@@ -127,19 +72,6 @@ export const Stickers = ({ type, kind, stickers, packIndex, isAndroid, onClick =
           observeIntersection={observeIntersectionForMedia}
         />);
       }
-      // TODO
-      // else if (type === 'video') {
-      // video: /* isNativePlatform
-      //   ? <Video
-      //     src={src}
-      //     thumb_src={thumb_src}
-      //     forcedLoading={forcedLoading}
-      //     computedWidth={computedWidth}
-      //     computedHeight={computedHeight}
-      //     computedMarginY={computedMarginY}
-      //     observeIntersection={observeIntersectionForMedia}
-      //   />
-      // }
 
       return {
         stickerComponent,
@@ -148,52 +80,19 @@ export const Stickers = ({ type, kind, stickers, packIndex, isAndroid, onClick =
       };
     });
 
-    // const wrappedComponents = stickerComponents.map((component, index) => {
-    //   if (kind === 'emoji') {
-    //     // If kind is 'emoji', wrap two elements together
-    //     if (index % 2 === 0) {
-    //       return (
-    //         <div key={index} className="wrapper">
-    //           {component}
-    //           {stickerComponents[index + 1]}
-    //         </div>
-    //       );
-    //     }
-    //   } else if (kind === 'sticker') {
-    //     // If kind is 'sticker', wrap each element individually
-    //     return (
-    //       <div key={index} className="wrapper">
-    //         {component}
-    //       </div>
-    //     );
-    //   }
-    // });
-
     return stickerComponents.map(({ stickerComponent, file_id, computedWidth }, index) => {
-      const wrapper = IS_ANDROID
-        ? (c: ReactNode) => (
-          <div className={styles.sticker} key={file_id}
-            style={{
-              width: computedWidth / kindRatio,
-              maxWidth: STICKER_MAX_WIDTH / kindRatio,
-              height: STICKER_HEIGHT,
-              padding: kind === CATALOG_KIND_ENUM.EMOJI && showFull ? '0 0.5rem' : '1rem 0.5rem',
-            }}
-          >
-            {c}
-          </div>
-        )
-        : (c: ReactNode) => (
-          <SwiperSlide className={styles.sticker} key={file_id}
-            style={{
-              width: computedWidth / kindRatio,
-              maxWidth: STICKER_MAX_WIDTH / kindRatio,
-              height: STICKER_HEIGHT,
-            }}
-          >
-            {c}
-          </SwiperSlide>
-        );
+      const wrapper = (c: ReactNode) => (
+        <li className={styles.sticker} key={file_id}
+          style={{
+            width: computedWidth / kindRatio,
+            maxWidth: STICKER_MAX_WIDTH / kindRatio,
+            height: STICKER_HEIGHT,
+            padding: kind === CATALOG_KIND_ENUM.EMOJI && showFull ? '0 0.5rem' : '1rem 0.5rem',
+          }}
+        >
+          {c}
+        </li>
+      );
 
       if (kind === CATALOG_KIND_ENUM.EMOJI && !showFull) {
         if (index < stickerComponents.length / 2) {
@@ -212,5 +111,9 @@ export const Stickers = ({ type, kind, stickers, packIndex, isAndroid, onClick =
     });
   }, [stickers]);
 
-  return Wrapper(stickersR);
+  return (
+    <ul className={c(styles.Main, styles.android, showFull && styles.showFull)}>
+      {stickersR}
+    </ul>
+  );
 };

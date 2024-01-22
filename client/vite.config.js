@@ -31,18 +31,18 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks (id) {
-          // creating a chunk to @open-ish deps. Reducing the vendor chunk size
-          if (id.includes('swiper')) {
-            return 'swiper';
-          }
-        },
-      },
-    },
-  },
+  // build: {
+  //   rollupOptions: {
+  //     output: {
+  //       manualChunks (id) {
+  //         // creating a chunk to @open-ish deps. Reducing the vendor chunk size
+  //         if (id.includes('swiper')) {
+  //           return 'swiper';
+  //         }
+  //       },
+  //     },
+  //   },
+  // },
   // worker: {
   //   format: 'iife',
   // },
