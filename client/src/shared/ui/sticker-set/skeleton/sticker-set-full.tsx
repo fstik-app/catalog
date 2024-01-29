@@ -17,10 +17,10 @@ export const StickerSetFullSkeleton = forwardRef<HTMLDivElement>((_, ref) => {
     >
       <div className={styles.Head}>
         <div className={styles.label}>
-          <label className={c(styles.name, styles.animated)}>
+          <label className={c(styles.name, 'skeleton')}>
             Nom du pack de stickers
           </label>
-          <div className={c(styles.description, styles.animated)}>
+          <div className={c(styles.description, 'skeleton')}>
             Description très intéressante
           </div>
         </div>
@@ -37,7 +37,7 @@ export const StickerSetFullSkeleton = forwardRef<HTMLDivElement>((_, ref) => {
           {Array.from({ length: 60 }).map((_, j) => (
             <div
               key={'main' + j}
-              className={c([styles.sticker, styles.animated])}
+              className={c([styles.sticker, 'skeleton'])}
               style={{
                 width: '60px',
                 height: '60px',

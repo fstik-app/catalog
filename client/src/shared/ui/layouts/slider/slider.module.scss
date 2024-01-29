@@ -33,12 +33,7 @@
     & div {
       border-radius: .5rem;
 
-      background: linear-gradient(
-        45deg,
-        var(--tg-theme-hint-button-hsl-color) 20%,
-        theme.$hint_color_20 40%,
-        var(--tg-theme-hint-button-hsl-color) 60%,
-      );
+      background: var(--tg-theme-hint-button-hsl-color);
 
       &.backgroundNone {
         background: none;

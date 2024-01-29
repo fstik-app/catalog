@@ -49,10 +49,10 @@ export const Skeleton: FC = () => {
       className={c(
         styles.reaction_button,
         styles.like,
-        buttonStyles.animated,
+        'skeleton',
       )}
     >
-      {'text'}
+      {'77 like'}
     </button>
   );
 };

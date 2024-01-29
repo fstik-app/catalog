@@ -26,38 +26,6 @@ body {
   background-color: theme.$bg_color;
 }
 
-// .ReactVirtualized__Grid__innerScrollContainer {
-//   overscroll-behavior-y: auto;
-// }
-
-.ReactVirtualized__Grid,
-.ReactVirtualized__List {
-  // border: 1px solid red;
-
-  overscroll-behavior: none;
-  // overflow: scroll !important;
-  /* Hide the scrollbar track */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-}
-
-
-.ReactVirtualized__Grid,
-.ReactVirtualized__List::-webkit-scrollbar {
-  width: 0px; /* Adjust the width to your preference */
-}
-
-.ReactVirtualized__Grid,
-.ReactVirtualized__List::-webkit-scrollbar-track {
-  background: transparent; /* Hide the track */
-}
-
-
-.ReactVirtualized__Grid,
-.ReactVirtualized__List::-webkit-scrollbar-thumb {
-  background-color: transparent; /* Hide the thumb */
-}
-
 #root {
   // position: absolute;
   width: 100%;
@@ -162,4 +130,40 @@ ul::-webkit-scrollbar-thumb {
 
 ul::-webkit-scrollbar-track {
   background-color: transparent;
+}
+
+.skeleton {
+  background: var(--tg-theme-hint-button-hsl-color);
+  height: auto;
+  min-height: 10px;
+  // margin: 2px 0;
+  // display: block;
+  border-radius: 99px;
+  position: relative;
+  overflow: hidden !important;
+  color: transparent !important;
+}
+
+.skeleton::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  max-width: 100%;
+  height: 100%;
+  animation: skeleton 1.5s ease-in-out infinite;
+
+  background: linear-gradient(90deg, transparent 0%, rgba(256, 256, 256, 0.25) 50%, transparent 100%);
+  animation: skeleton-animation 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes skeleton-animation {
+  0% {
+      transform: translateX(-125%) skewX(-45deg);
+  }
+  40%, 100% {
+      transform: translateX(140%) skewX(-45deg);
+  }
 }

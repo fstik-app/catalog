@@ -24,6 +24,7 @@ export const fetchStickersSetsFx = createEffect(async ({
   user_token,
   kind,
 }: fetchStickerSetsType) => {
+  // return (new Promise(() => {}) as any);
   const { data } = await request.post<{ stickerSets: IStickerSet[] }, fetchStickerSetsType>('searchStickerSet', {
     query,
     limit,

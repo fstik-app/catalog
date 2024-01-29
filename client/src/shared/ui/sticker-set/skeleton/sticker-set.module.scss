@@ -28,6 +28,9 @@
     overflow: hidden;
 
     .name {
+      display: inline-block;
+      height: calc(1rem + 4px);
+
       font-size: 1rem;
       font-weight: 500;
       color: theme.$text_color;
@@ -41,7 +44,7 @@
       color: theme.$hint_color;
       margin-bottom: 8px;
 
-      height: 1.5rem;
+      height: calc(1rem + 4px);
 
       white-space: nowrap;
 
@@ -55,11 +58,6 @@
   display: none !important;
 }
 
-@keyframes gradient {
-    0%{background-position:66% 0%}
-    50%{background-position:35% 100%}
-    100%{background-position:66% 0%}
-}
 
 .Main {
   display: flex;
@@ -77,6 +75,7 @@
   padding: 0.5rem 0px 1rem 0px;
 
   overflow: hidden;
+  width: fit-content;
 
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -98,12 +97,7 @@
     border-radius: 0.5rem;
     background-size: 500% 500%;
 
-    background: linear-gradient(
-      45deg,
-      var(--tg-theme-hint-button-hsl-color) 20%,
-      theme.$hint_color_20 40%,
-      var(--tg-theme-hint-button-hsl-color) 60%,
-    );
+    background: var(--tg-theme-hint-button-hsl-color);
 
     & div {
       border-radius: 0.5rem;
@@ -185,21 +179,6 @@
     background-color: theme.$button_color;
     color: theme.$button_text_color;
   }
-}
-
-.animated {
-  border-radius: 1rem;
-  color:rgba(66, 193, 31, 0) !important;
-  background-size: 400% 400% !important;
-
-  background: linear-gradient(
-    45deg,
-    var(--tg-theme-hint-button-hsl-color) 20%,
-    theme.$hint_color_20 40%,
-    var(--tg-theme-hint-button-hsl-color) 60%,
-  );
-
-  animation: gradient 1.75s ease-in-out 0s infinite reverse running;
 }
 
 .showFull {

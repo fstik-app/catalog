@@ -33,7 +33,7 @@ export const Skeleton:FC<Pick<IButtonProps, 'text'>> = ({
 }) => {
   return (
     <div>
-      <div className={c(styles.button, styles.animated)}>
+      <div className={c(styles.button, 'skeleton')}>
         {text}
       </div>
     </div>

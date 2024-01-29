@@ -17,11 +17,11 @@ export const StickerSetSkeleton = forwardRef<HTMLDivElement>((_, ref) => {
     >
       <div className={styles.Head}>
         <div className={styles.label}>
-          <label className={c(styles.name, styles.animated)}>
-            Nom du pack de stickers
-          </label>
-          <div className={c(styles.description, styles.animated)}>
-            Description très intéressante
+          <div className={c(styles.name, 'skeleton')}>
+              Nom du pack de stickers
+          </div>
+          <div className={c(styles.description, 'skeleton')}>
+              Description très intéressante
           </div>
         </div>
         <ButtonSkeleton text={t('add')}/>
@@ -31,10 +31,10 @@ export const StickerSetSkeleton = forwardRef<HTMLDivElement>((_, ref) => {
           className={styles.Main}
           style={{ marginLeft: 7.5 }}
         >
-          {Array.from({ length: 5 }).map((_, j) => (
+          {Array.from({ length: 17 }).map((_, j) => (
             <div
               key={'main' + j}
-              className={c([styles.sticker, styles.animated])}
+              className={c([styles.sticker, 'skeleton'])}
               style={{
                 width: '60px',
                 height: '60px',
