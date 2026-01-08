@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+      - redis
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.fstik-api.rule=Host(`api.fstik.app`)"
+      - "traefik.http.routers.fstik-api.entrypoints=web"
+      - "traefik.http.routers.fstik-api.service=fstik-api-svc"
+      - "traefik.http.services.fstik-api-svc.loadbalancer.server.port=4000"
+    networks:
+      - default
+      - traefik-public
+
+  mongodb:
+    image: mongo:6
+    restart: unless-stopped
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=fstik
+    networks:
+      - default
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    networks:
+      - default
+
+volumes:
+  mongodb_data:
+  redis_data:
+
+networks:
+  traefik-public:
+    external: true
