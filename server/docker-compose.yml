@@ -18,7 +18,7 @@ services:
       - traefik-public
 
   mongodb:
-    image: mongo:6
+    image: mongo:8
     restart: unless-stopped
     volumes:
       - ./data/mongodb:/data/db
@@ -28,7 +28,7 @@ services:
       - default
 
   redis:
-    image: redis:7-alpine
+    image: redis:8-alpine
     restart: unless-stopped
     volumes:
       - ./data/redis:/data
@@ -37,7 +37,7 @@ services:
       - default
 
   restore:
-    image: mongo:6
+    image: mongo:8
     depends_on:
       - mongodb
     volumes:
