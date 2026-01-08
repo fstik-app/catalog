@@ -36,13 +36,23 @@ services:
     networks:
       - default
 
+  backup:
+    image: mongo:8
+    volumes:
+      - ./dump:/dump
+    command: mongodump --uri="${ATLAS_MONGODB_URI}" --out=/dump
+    networks:
+      - default
+    profiles:
+      - backup
+
   restore:
     image: mongo:8
     depends_on:
       - mongodb
     volumes:
       - ./dump:/dump
-    command: mongorestore --host=mongodb --db=fstik /dump/fstik
+    command: mongorestore --host=mongodb --db=fstik /dump/fStikBot
     networks:
       - default
     profiles:
