@@ -1,5 +1,6 @@
 services:
   api:
+    container_name: fstik-api
     build: .
     restart: unless-stopped
     env_file:
@@ -18,6 +19,7 @@ services:
       - traefik-public
 
   mongodb:
+    container_name: fstik-mongodb
     image: mongo:8
     restart: unless-stopped
     volumes:
@@ -28,6 +30,7 @@ services:
       - default
 
   redis:
+    container_name: fstik-redis
     image: redis:8-alpine
     restart: unless-stopped
     volumes:
@@ -37,6 +40,7 @@ services:
       - default
 
   backup:
+    container_name: fstik-backup
     image: mongo:8
     volumes:
       - ./dump:/dump
@@ -47,6 +51,7 @@ services:
       - backup
 
   restore:
+    container_name: fstik-restore
     image: mongo:8
     depends_on:
       - mongodb
