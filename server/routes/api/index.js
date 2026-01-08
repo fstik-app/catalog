@@ -10,7 +10,10 @@ api.use(logger())
 
 const ratelimitConfig = {
   driver: 'redis',
-  db: new Redis(),
+  db: new Redis({
+    host: process.env.REDIS_HOST || 'localhost',
+    port: process.env.REDIS_PORT || 6379,
+  }),
   duration: 1000 * 50,
   errorMessage: {
     ok: false,

@@ -1,8 +1,10 @@
 const got = require('got')
 const Redis = require('ioredis')
 
-const redis = Redis.createClient({
-  prefix: `${process.env.REDIS_PREFIX}:admitad:`,
+const redis = new Redis({
+  host: process.env.REDIS_HOST || 'localhost',
+  port: process.env.REDIS_PORT || 6379,
+  keyPrefix: `${process.env.REDIS_PREFIX}:admitad:`,
 })
 
 const { ADMITAD_CLIENT_ID, ADMITAD_CLIENT_SECRET } = process.env
