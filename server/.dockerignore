@@ -26,3 +26,6 @@ Dockerfile
 ecosystem.config.js
 
 *.md
+
+data/
+dump/
