@@ -12,12 +12,11 @@ app.use(bodyParser())
 
 app.keys = [process.env.SESSION_SECRET]
 
-app.use(require('./helpers').helpersApi)
+const { helpersApi, redis } = require('./helpers')
+
+app.use(helpersApi)
 
 const db = require('./database')
-
-const Redis = require('ioredis')
-const redis = new Redis({ keyPrefix: `${process.env.REDIS_PREFIX}:` })
 
 const { Telegram } = require('telegraf')
 const telegram = new Telegram(process.env.BOT_TOKEN)
