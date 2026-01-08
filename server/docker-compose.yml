@@ -20,12 +20,12 @@ services:
 
   mongodb:
     container_name: fstik-mongodb
-    image: mongo:8
+    image: mongodb/mongodb-atlas-local:8.0
     restart: unless-stopped
+    environment:
+      - MONGODB_INITDB_DATABASE=fstik
     volumes:
       - ./data/mongodb:/data/db
-    environment:
-      - MONGO_INITDB_DATABASE=fstik
     networks:
       - default
 
