@@ -29,3 +29,4 @@ ecosystem.config.js
 
 data/
 dump/
+config/

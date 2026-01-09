@@ -82,3 +82,11 @@ typings/
 
 firebase-adminsdk.json
 whitelist.json
+
+# MongoDB secrets
+config/keyfile
+config/pwfile
+
+# Data directories
+data/
+dump/

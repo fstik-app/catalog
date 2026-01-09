@@ -6,8 +6,10 @@ services:
     env_file:
       - .env
     depends_on:
-      - mongodb
-      - redis
+      mongod:
+        condition: service_healthy
+      redis:
+        condition: service_started
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.fstik-api.rule=Host(`api.fstik.app`)"
@@ -15,19 +17,55 @@ services:
       - "traefik.http.routers.fstik-api.service=fstik-api-svc"
       - "traefik.http.services.fstik-api-svc.loadbalancer.server.port=4000"
     networks:
-      - default
+      - fstik-network
       - traefik-public
 
-  mongodb:
+  mongod:
     container_name: fstik-mongodb
-    image: mongodb/mongodb-atlas-local:8.0
+    image: mongodb/mongodb-community-server:8.2.0-ubi9
+    command: mongod --config /etc/mongod.conf --replSet rs0
     restart: unless-stopped
-    environment:
-      - MONGODB_INITDB_DATABASE=fstik
     volumes:
-      - mongodb_data:/data/db
+      - ./data/mongodb:/data/db
+      - ./config/mongod.conf:/etc/mongod.conf:ro
+      - ./config/keyfile:/etc/mongodb/keyfile:ro
     networks:
-      - default
+      - fstik-network
+    healthcheck:
+      test: mongosh --quiet --eval "db.adminCommand('ping')" || exit 1
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+
+  mongod-setup:
+    container_name: fstik-mongodb-setup
+    image: mongodb/mongodb-community-server:8.2.0-ubi9
+    depends_on:
+      mongod:
+        condition: service_healthy
+    command: bash /setup-replica-set.sh
+    volumes:
+      - ./config/setup-replica-set.sh:/setup-replica-set.sh:ro
+    networks:
+      - fstik-network
+    restart: "no"
+    profiles:
+      - setup
+
+  mongot:
+    container_name: fstik-mongot
+    image: mongodb/mongodb-community-search:0.53.1
+    restart: unless-stopped
+    volumes:
+      - ./data/mongot:/data/mongot
+      - ./config/mongot.conf:/mongot-community/config.default.yml:ro
+      - ./config/pwfile:/mongot-community/pwfile:ro
+    depends_on:
+      mongod:
+        condition: service_healthy
+    networks:
+      - fstik-network
 
   redis:
     container_name: fstik-redis
@@ -37,7 +75,7 @@ services:
       - ./data/redis:/data
     command: redis-server --appendonly yes
     networks:
-      - default
+      - fstik-network
 
   backup:
     container_name: fstik-backup
@@ -46,7 +84,7 @@ services:
       - ./dump:/dump
     command: mongodump --uri="${ATLAS_MONGODB_URI}" --out=/dump
     networks:
-      - default
+      - fstik-network
     profiles:
       - backup
 
@@ -54,18 +92,25 @@ services:
     container_name: fstik-restore
     image: mongo:8
     depends_on:
-      - mongodb
+      mongod:
+        condition: service_healthy
     volumes:
       - ./dump:/dump
-    command: mongorestore --host=mongodb --db=fstik /dump/fStikBot
+    command: >
+      mongorestore
+      --host=mongod
+      --username=admin
+      --password=adminPassword
+      --authenticationDatabase=admin
+      --db=fstik
+      /dump/fStikBot
     networks:
-      - default
+      - fstik-network
     profiles:
       - restore
 
 networks:
+  fstik-network:
+    name: fstik-network
   traefik-public:
     external: true
-
-volumes:
-  mongodb_data:
