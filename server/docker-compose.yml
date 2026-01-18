@@ -12,9 +12,16 @@ services:
         condition: service_started
     labels:
       - "traefik.enable=true"
+      # HTTP
       - "traefik.http.routers.fstik-api.rule=Host(`api.fstik.app`)"
       - "traefik.http.routers.fstik-api.entrypoints=web"
       - "traefik.http.routers.fstik-api.service=fstik-api-svc"
+      # HTTPS
+      - "traefik.http.routers.fstik-api-secure.rule=Host(`api.fstik.app`)"
+      - "traefik.http.routers.fstik-api-secure.entrypoints=websecure"
+      - "traefik.http.routers.fstik-api-secure.service=fstik-api-svc"
+      - "traefik.http.routers.fstik-api-secure.tls=true"
+      # Service
       - "traefik.http.services.fstik-api-svc.loadbalancer.server.port=4000"
     networks:
       - fstik-network
@@ -22,6 +29,8 @@ services:
 
   mongod:
     container_name: fstik-mongodb
+    ports:
+      - "100.100.212.75:27018:27017"
     image: mongodb/mongodb-community-server:8.2.0-ubi9
     command: mongod --config /etc/mongod.conf --replSet rs0
     restart: unless-stopped
